@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Tasneemul Hassan — Robotics & Electronics Engineer</title>
+  <meta name="description" content="Portfolio of Md. Tasneemul Hassan — EEE engineer specializing in robotics, autonomous systems, and electronics." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="field" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="grain"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<header class="site-nav">
+  <div class="nav-capsule" id="navCapsule">
+    <a href="#home" class="logo"><span class="logo-dot"></span>T. HASSAN</a>
+    <nav class="links" id="navLinks">
+      <span class="nav-pill" id="navPill"></span>
+      <a href="#home" data-nav="home" class="active">Home</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#achievements" data-nav="achievements">Achievements</a>
+      <a href="#gallery" data-nav="gallery">Gallery</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="switch" id="themeToggle" aria-label="Toggle light / dark mode"></button>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span>Available for robotics &amp; embedded roles</span>
+        <h1 class="reveal" style="transition-delay:.05s;">Systems that <span class="grad-text">fly</span>,<br>circuits that <span class="grad-text">think.</span></h1>
+        <p class="lede reveal" style="transition-delay:.12s;">I'm Tasneemul — an Electrical &amp; Electronic Engineering graduate building autonomous robotics and precision electronics. Currently leading BUEEC and developing <b>Payra</b>, an autonomous hexacopter delivery system.</p>
+        <div class="hero-actions reveal" style="transition-delay:.18s;">
+          <a class="btn btn-primary" href="#" id="resumeBtn">↓ Download résumé</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/tasneemulhassan12/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/Th12mugdho" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="orbit-stage reveal-scale" style="transition-delay:.15s;">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"><span class="orbit-node"></span></div>
+        <div class="orbit-ring r3"><span class="orbit-node"></span></div>
+        <div class="orbit-core"><span>PAYRA<br>UAV · ACTIVE</span></div>
+        <div class="float-chip glass chip-a">ROS2 · Gazebo</div>
+        <div class="float-chip glass chip-b">PX4 Autopilot</div>
+        <div class="float-chip glass chip-c">6× rotors</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">01 · About</span>
+          <h2>Trained on circuits,<br>built for systems.</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="glass about-card reveal">
+          <p style="color:var(--muted); font-size:15.5px;">I graduated from BRAC University with a BSc in Electrical and Electronic Engineering, having spent my final year leading <b style="color:var(--text);">BUEEC</b> as President, and building <b style="color:var(--text);">Payra</b> — a hexacopter-based autonomous non-landing drone delivery system for urban food and medicine delivery in Dhaka.</p>
+          <p style="color:var(--muted); font-size:15.5px; margin-top:14px;">My work sits at the intersection of embedded control, simulation, and applied machine learning — from PX4 flight-stack tuning to bio-inspired neural network design.</p>
+          <div class="stat-grid">
+            <div class="glass stat-card"><b data-count="3.61">0</b><span>CGPA / 4.0</span></div>
+            <div class="glass stat-card"><b data-count="2">0</b><span>Publications</span></div>
+            <div class="glass stat-card"><b data-count="3" data-suffix="+ yrs">0</b><span>Club leadership</span></div>
+          </div>
+        </div>
+        <div class="glass about-card reveal" style="transition-delay:.1s;">
+          <span class="mono" style="font-size:11px; color:var(--muted-2); text-transform:uppercase; letter-spacing:.08em;">/ Toolchain</span>
+          <div class="marquee" style="margin-top:16px;">
+            <div class="marquee-track" id="marqueeTrack">
+              <span class="skill-band"><span class="dot" style="background:#8B6CFF"></span>C++</span>
+              <span class="skill-band"><span class="dot" style="background:#4C8DFF"></span>Python / NumPy</span>
+              <span class="skill-band"><span class="dot" style="background:#3FE3C4"></span>ROS2 · Gazebo</span>
+              <span class="skill-band"><span class="dot" style="background:#8B6CFF"></span>PX4 Autopilot</span>
+              <span class="skill-band"><span class="dot" style="background:#4C8DFF"></span>Arduino / ESP32</span>
+              <span class="skill-band"><span class="dot" style="background:#3FE3C4"></span>SPICE / PCB Design</span>
+              <span class="skill-band"><span class="dot" style="background:#8B6CFF"></span>Machine Learning</span>
+            </div>
+          </div>
+          <p style="margin-top:24px; font-family:var(--font-mono); font-size:11px; color:var(--muted-2); line-height:1.8;">// scrolling toolchain strip —<br>hover to pause, subject-agnostic build stack.</p>
+          <div class="stat-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="glass stat-card"><b data-count="20">0</b><span>Sources reviewed</span></div>
+            <div class="glass stat-card"><b data-count="5">0</b><span>FYDP team size</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">02 · Work</span>
+          <h2>Selected projects</h2>
+        </div>
+        <div class="tabbar" role="tablist" aria-label="Project category">
+          <button class="active" data-cat="robotics" role="tab" aria-selected="true">Robotics</button>
+          <button data-cat="electronics" role="tab" aria-selected="false">Electronics</button>
+        </div>
+      </div>
+
+      <div class="project-grid" id="robotics" data-panel="robotics">
+        <article class="glass project-card reveal">
+          <span class="ros-badge">ROS2 · PX4</span>
+          <span class="tag">Final Year Design Project</span>
+          <h3>Payra — Autonomous Delivery Hexacopter</h3>
+          <p>A hexacopter-based non-landing drone delivery system for urban food and medicine delivery in Dhaka, with an IMU-driven active fan stabilization approach for the payload box.</p>
+          <div class="project-meta">
+            <span>Pixhawk flight controller</span>
+            <span>ESP32 smart delivery box</span>
+            <span>Gazebo SITL simulation</span>
+          </div>
+        </article>
+        <article class="glass project-card reveal" style="transition-delay:.06s;">
+          <span class="tag">Bio-inspired locomotion</span>
+          <h3>MechaHex — Six-Legged Hexapod</h3>
+          <p>A six-legged hexapod robot navigating terrain via a tripod gait, with real-time motor coordination and trajectory planning for stable walking, turning, and obstacle avoidance.</p>
+          <div class="project-meta">
+            <span>Arduino control</span>
+            <span>Custom 3D-printed chassis</span>
+            <span>Ultrasonic sensing</span>
+          </div>
+        </article>
+        <article class="glass project-card reveal" style="transition-delay:.12s;">
+          <span class="tag">Embedded vision</span>
+          <h3>Live Surveillance Node</h3>
+          <p>A compact surveillance system built on a Raspberry Pi Zero 2W with a Flask-based web app for real-time video streaming and remote monitoring.</p>
+          <div class="project-meta">
+            <span>Raspberry Pi Zero 2W</span>
+            <span>Flask streaming server</span>
+          </div>
+        </article>
+        <article class="glass project-card reveal" style="transition-delay:.18s;">
+          <span class="tag">Docs &amp; systems design</span>
+          <h3>Payra — FYDP Design Report</h3>
+          <p>Formal design documentation covering system specifications, requirements, constraints, and conflicting-requirement trade-off tables for the delivery drone platform.</p>
+          <div class="project-meta">
+            <span>Requirements engineering</span>
+            <span>URDF/xacro modeling</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="project-grid" id="electronics" data-panel="electronics" style="display:none;">
+        <article class="glass project-card">
+          <span class="tag">Analog design</span>
+          <h3>Active Filter Design Suite</h3>
+          <p>Transfer function derivation, Bode plot analysis, and active filter design using Multiple Feedback (MFB) and Twin-T topologies, visualized with interactive Chart.js tooling.</p>
+          <div class="project-meta">
+            <span>MFB / Twin-T</span>
+            <span>Bode analysis</span>
+          </div>
+        </article>
+        <article class="glass project-card">
+          <span class="tag">VLSI</span>
+          <h3>CMOS Delay &amp; Sizing Study</h3>
+          <p>Elmore delay modeling and transistor sizing across pull-up/pull-down networks, paired with Boolean minimization via Karnaugh maps for digital logic design.</p>
+          <div class="project-meta">
+            <span>Elmore delay</span>
+            <span>PDN / PUN sizing</span>
+          </div>
+        </article>
+        <article class="glass project-card">
+          <span class="tag">Applied physics research</span>
+          <h3>EPR Spectroscopy of DPPH</h3>
+          <p>Research assistantship at Allegheny College examining unpaired-electron magnetic moments in DPPH using a Varian E-3 X-band EPR spectrometer with liquid-nitrogen cryostat.</p>
+          <div class="project-meta">
+            <span>X-band EPR</span>
+            <span>Room-temp measurement</span>
+          </div>
+        </article>
+        <article class="glass project-card">
+          <span class="tag">Signals</span>
+          <h3>Modulation &amp; Transform Toolkit</h3>
+          <p>Worked problem sets and simulations spanning Fourier series/transforms, AM modulation-demodulation, Laplace transforms, and VHDL event-driven simulation with transport delays.</p>
+          <div class="project-meta">
+            <span>Fourier / Laplace</span>
+            <span>VHDL simulation</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">03 · Publications</span>
+          <h2>Research papers</h2>
+        </div>
+        <span class="section-count">2 total</span>
+      </div>
+
+      <div class="glass paper reveal">
+        <span class="paper-index mono">01</span>
+        <div>
+          <h3>Biologically Inspired Network Design to Train Only Through Forward Pass</h3>
+          <div class="venue">2024 IEEE 2nd International Conference on Information and Communication Technology (ICICT) · Dhaka</div>
+          <p class="abstract">Introduces the Biceptron, integrating Hebbian learning and brain-criticality theory with a custom Connection Adjustment module and binary activation function to train networks without backpropagation.</p>
+        </div>
+        <div class="status">Published<br><a href="https://ieeexplore.ieee.org/document/10839663" target="_blank" rel="noopener">IEEE Xplore ↗</a></div>
+      </div>
+
+      <div class="glass paper reveal" style="transition-delay:.08s;">
+        <span class="paper-index mono">02</span>
+        <div>
+          <h3>G-Buffer-Guided Feature Modulation for Lightweight Rendered Image Super-Resolution</h3>
+          <div class="venue">Targeting IEEE Transactions on Visualization and Computer Graphics (TVCG)</div>
+          <p class="abstract">A lightweight neural architecture for rendered-image super-resolution, using G-buffer-guided feature modulation to reduce compute while preserving reconstruction quality.</p>
+        </div>
+        <div class="status">Manuscript<br>in preparation</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">04 · Record</span>
+          <h2>Achievements</h2>
+        </div>
+      </div>
+      <div class="ach-grid">
+        <div class="glass ach-col reveal">
+          <h4>Academic Honors</h4>
+          <div class="ach-item"><b>1st Runner-up</b><span>National-level technical competition</span></div>
+          <div class="ach-item"><b>Champion</b><span>Traction — national robotics competition</span></div>
+          <div class="ach-item"><b>Champion</b><span>Departmental technical challenge</span></div>
+          <div class="ach-item"><b>Finalist</b><span>National High School Programming Contest (7th rank)</span></div>
+        </div>
+        <div class="glass ach-col reveal" style="transition-delay:.08s;">
+          <h4>Leadership Roles</h4>
+          <div class="ach-item"><b>President</b><span>BRAC University Electrical &amp; Electronics Club — 2026–present</span></div>
+          <div class="ach-item"><b>Assistant Director, R&amp;D</b><span>BUEEC — 2024–2026</span></div>
+          <div class="ach-item"><b>Director, Event Management</b><span>BRAC University Natural Sciences Club — 2024–2025</span></div>
+          <div class="ach-item"><b>Apprentice, Research &amp; Project Mgmt</b><span>Robotics Club of BRAC University — 2022–2026</span></div>
+        </div>
+        <div class="glass ach-col reveal" style="transition-delay:.16s;">
+          <h4>Co-curricular</h4>
+          <div class="ach-item"><b>Bronze Standard Awardee</b><span>The Duke of Edinburgh's International Award</span></div>
+          <div class="ach-item"><b>Editor-in-Chief</b><span>Tigers Cricket — digital sports desk</span></div>
+          <div class="ach-item"><b>MUN Delegate</b><span>Represented Sudan (WHO) &amp; Uganda (UNICEF)</span></div>
+          <div class="ach-item"><b>Research Assistant</b><span>Allegheny College, EPR spectroscopy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">05 · Gallery</span>
+          <h2>Moments &amp; milestones</h2>
+        </div>
+        <span class="section-count">Placeholder — swap in your photos</span>
+      </div>
+      <div class="gallery-grid">
+        <div class="glass gallery-slot reveal">Spectra 3.0<br>award photo</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.04s;">Traction 2025<br>competition</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.08s;">BUEEC team<br>portrait</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.12s;">Payra build<br>in progress</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.16s;">Conference<br>presentation</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.20s;">MechaHex<br>field test</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.24s;">Lab bench<br>session</div>
+        <div class="glass gallery-slot reveal" style="transition-delay:.28s;">Add photo +</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="glass contact-panel reveal">
+        <div>
+          <span class="eyebrow">06 · Contact</span>
+          <h2 style="margin-top:14px; font-size:32px;">Let's build something.</h2>
+          <p style="color:var(--muted); margin-top:14px; max-width:44ch;">Open to robotics, embedded systems, and research-engineering roles. Reach out directly or find me on the networks below.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:tasneemulhassan12@gmail.com">Email <span class="arrow">→</span></a>
+          <a href="https://www.linkedin.com/in/tasneemulhassan12/" target="_blank" rel="noopener">LinkedIn <span class="arrow">→</span></a>
+          <a href="https://github.com/Th12mugdho" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+          <a href="https://www.facebook.com/tasneemulhassan12" target="_blank" rel="noopener">Facebook <span class="arrow">→</span></a>
+          <a href="https://thm.lovable.app/" target="_blank" rel="noopener">Personal site <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Md. Tasneemul Hassan — Built with care.</span>
+    <span>Dhaka, Bangladesh</span>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chatToggle" aria-label="Open assistant" aria-expanded="false">✦</button>
+<div class="chat-panel glass" id="chatPanel" role="dialog" aria-label="Portfolio assistant">
+  <div class="chat-head">
+    <b><span class="pulse"></span>ASK.TH — RAG assistant</b>
+    <button class="chat-close" id="chatClose" aria-label="Close assistant">✕</button>
+  </div>
+  <div class="chat-body">
+    <div class="chat-msg">Hi, I'm a placeholder for a retrieval-augmented assistant. Once connected to a backend, I'll answer questions using Tasneemul's résumé, CV, and profile as a knowledge base.</div>
+    <div class="chat-msg mono" style="font-size:11.5px;">// Wire this up to /api/chat, which embeds &amp; retrieves from the documents in /knowledge, then calls the completion endpoint with the retrieved context.</div>
+  </div>
+  <div class="chat-foot">
+    <input class="chat-input" placeholder="Ask about my projects…" disabled />
+    <span class="chat-note">Disabled in this boilerplate — see README for RAG setup.</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
