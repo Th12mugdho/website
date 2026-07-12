@@ -53,7 +53,7 @@
   const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
   const reveal = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0 }); // Dropped to 0 for instant trigger
   revealEls.forEach(el => reveal.observe(el));
 
   const counters = document.querySelectorAll('[data-count]');
