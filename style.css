@@ -234,7 +234,8 @@ footer{ padding:40px 0; border-top:1px solid var(--glass-border); }
 .chat-input{ width:100%; border:1px solid var(--glass-border); border-radius:100px; padding:11px 16px; background:var(--glass); color:var(--muted); font-family:var(--font-body); font-size:13px; }
 .chat-note{ font-family:var(--font-mono); font-size:10.5px; color:var(--muted-2); margin-top:8px; display:block; }
 
-.reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+/* Further reduced durations to .18s and .15s for extreme snappiness */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .18s cubic-bezier(.22,1,.36,1), transform .18s cubic-bezier(.22,1,.36,1); }
 .reveal.in{ opacity:1; transform:translateY(0); }
-.reveal-scale{ opacity:0; transform:scale(.94); transition:opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
+.reveal-scale{ opacity:0; transform:scale(.94); transition:opacity .15s ease, transform .15s cubic-bezier(.22,1,.36,1); }
 .reveal-scale.in{ opacity:1; transform:scale(1); }
