@@ -21,6 +21,7 @@
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
   <div class="grain"></div>
+  <div class="sparkle-field" id="sparkleField"></div>
 </div>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
@@ -40,34 +41,68 @@
     <div class="nav-actions">
       <button class="switch" id="themeToggle" aria-label="Toggle light / dark mode"></button>
       <a class="nav-cta" href="#contact">Get in touch</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
+
+<div class="drawer-scrim" id="drawerScrim"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="#home" data-drawer-nav="home">Home <span class="arrow">→</span></a>
+  <a href="#about" data-drawer-nav="about">About <span class="arrow">→</span></a>
+  <a href="#projects" data-drawer-nav="projects">Projects <span class="arrow">→</span></a>
+  <a href="#research" data-drawer-nav="research">Research <span class="arrow">→</span></a>
+  <a href="#achievements" data-drawer-nav="achievements">Achievements <span class="arrow">→</span></a>
+  <a href="#gallery" data-drawer-nav="gallery">Gallery <span class="arrow">→</span></a>
+  <a href="#contact" data-drawer-nav="contact">Contact <span class="arrow">→</span></a>
+  <a class="drawer-cta" href="#contact">Get in touch</a>
+</div>
 
 <main id="main">
 
   <section class="hero" id="home">
     <div class="wrap hero-grid">
+      
       <div>
-        <span class="eyebrow reveal"><span class="dot"></span>Available for robotics &amp; embedded roles</span>
-        <h1 class="reveal" style="transition-delay:.01s;">Systems that <span class="grad-text">fly</span>,<br>circuits that <span class="grad-text">think.</span></h1>
-        <p class="lede reveal" style="transition-delay:.03s;">I'm Tasneemul — an Electrical &amp; Electronic Engineering graduate building autonomous robotics and precision electronics. Currently leading BUEEC and developing <b>Payra</b>, an autonomous hexacopter delivery system.</p>
-        <div class="hero-actions reveal" style="transition-delay:.04s;">
-          <a class="btn btn-primary" href="#" id="resumeBtn">↓ Download résumé</a>
+        <span class="eyebrow reveal"><span class="dot"></span>Available for Collaborations</span>
+        <h3 class="hero-subtitle reveal" style="transition-delay:.02s;">Aspiring Electrical Engineer</h3>
+        <h1 class="reveal" style="transition-delay:.04s;">MD TASNEEMUL<br><span class="text-cyan">HASSAN</span></h1>
+        
+        <div class="hero-divider reveal" style="transition-delay:.06s;"></div>
+        
+        <p class="lede reveal" style="transition-delay:.08s;">Researcher | Robotics Enthusiast | Passionate about AI, VR, and innovative engineering solutions</p>
+        
+        <div class="hero-tags reveal" style="transition-delay:.10s;">
+          <span class="hero-tag">✨ AI & ML</span>
+          <span class="hero-tag">⚡ Robotics</span>
+          <span class="hero-tag">💻 Research</span>
+        </div>
+
+        <div class="hero-actions reveal" style="transition-delay:.12s;">
+          <a class="btn btn-primary" href="https://th12mugdho.github.io/website/index.html#" id="resumeBtn">↓ Download résumé</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/tasneemulhassan12/" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a class="btn btn-ghost" href="https://github.com/Th12mugdho" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
 
-      <div class="orbit-stage reveal-scale" style="transition-delay:.03s;">
-        <div class="orbit-ring r1"></div>
-        <div class="orbit-ring r2"><span class="orbit-node"></span></div>
-        <div class="orbit-ring r3"><span class="orbit-node"></span></div>
-        <div class="orbit-core"><span>PAYRA<br>UAV · ACTIVE</span></div>
-        <div class="float-chip glass chip-a">ROS2 · Gazebo</div>
-        <div class="float-chip glass chip-b">PX4 Autopilot</div>
-        <div class="float-chip glass chip-c">6× rotors</div>
+      <div class="hero-image-stage reveal-scale" id="tiltStage" style="transition-delay:.06s;">
+        <div class="hero-tilt-container" id="tiltContainer">
+          
+          <div class="hero-wireframe"></div>
+          
+          <div class="hero-image-frame">
+            <img src="https://i.postimg.cc/vmjFdty4/Untitled-design-(2)-(2).png" alt="Md Tasneemul Hassan" class="profile-img">
+          </div>
+
+        </div>
       </div>
+      
+    </div>
+    
+    <div class="scroll-down reveal" style="transition-delay:.15s;">
+      <span>Scroll down</span>
+      <div class="mouse-icon"></div>
+      <div class="arrow-down">↓</div>
     </div>
   </section>
 
@@ -330,16 +365,20 @@
     <b><span class="pulse"></span>ASK.TH — RAG assistant</b>
     <button class="chat-close" id="chatClose" aria-label="Close assistant">✕</button>
   </div>
-  <div class="chat-body">
-    <div class="chat-msg">Hi, I'm a placeholder for a retrieval-augmented assistant. Once connected to a backend, I'll answer questions using Tasneemul's résumé, CV, and profile as a knowledge base.</div>
-    <div class="chat-msg mono" style="font-size:11.5px;">// Wire this up to /api/chat, which embeds &amp; retrieves from the documents in /knowledge, then calls the completion endpoint with the retrieved context.</div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg">Hi! I'm a small retrieval-based assistant running entirely in your browser — no server needed. Ask me about Tasneemul's projects, research, leadership, or skills.</div>
   </div>
   <div class="chat-foot">
-    <input class="chat-input" placeholder="Ask about my projects…" disabled />
-    <span class="chat-note">Disabled in this boilerplate — see README for RAG setup.</span>
+    <form class="chat-form" id="chatForm">
+      <input class="chat-input" id="chatInput" placeholder="Ask about my projects…" autocomplete="off" />
+      <button class="chat-send" id="chatSend" type="submit" aria-label="Send">➤</button>
+    </form>
+    <span class="chat-note">Local retrieval demo · swap in a real LLM backend anytime, see knowledge.js</span>
   </div>
 </div>
 
+<script src="knowledge.js"></script>
+<script src="rag.js"></script>
 <script src="script.js"></script>
 
 </body>
