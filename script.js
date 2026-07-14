@@ -2,8 +2,14 @@
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   let theme = 'dark';
-  function applyTheme(t){ theme = t; root.setAttribute('data-theme', t); }
-  applyTheme('dark');
+  function applyTheme(t){
+    theme = t;
+    root.setAttribute('data-theme', t);
+    try { localStorage.setItem('mth-theme', t); } catch(e){ /* storage unavailable — theme just won't persist */ }
+  }
+  let savedTheme = 'dark';
+  try { savedTheme = localStorage.getItem('mth-theme') || 'dark'; } catch(e){ /* ignore */ }
+  applyTheme(savedTheme);
   toggle.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark'));
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -34,17 +40,22 @@
   // once. It's replaced by a pure-CSS hover glow in style.css (`.glass:hover::before`),
   // which costs nothing until a card is actually hovered.
 
-  // ---------- Nav capsule scroll state (rAF-throttled) ----------
+  // ---------- Nav capsule scroll state + back-to-top visibility (rAF-throttled) ----------
   const navCapsule = document.getElementById('navCapsule');
+  const backTop = document.getElementById('backTop');
   let scrollQueued = false;
   window.addEventListener('scroll', () => {
     if (scrollQueued) return;
     scrollQueued = true;
     requestAnimationFrame(() => {
       navCapsule.classList.toggle('scrolled', window.scrollY > 30);
+      if (backTop) backTop.classList.toggle('show', window.scrollY > 600);
       scrollQueued = false;
     });
   }, { passive:true });
+  if (backTop){
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+  }
 
   const sections = document.querySelectorAll('main section[id]');
   const navLinks = document.querySelectorAll('nav.links a');
@@ -122,10 +133,18 @@
   const chatToggle = document.getElementById('chatToggle');
   const chatPanel = document.getElementById('chatPanel');
   const chatClose = document.getElementById('chatClose');
+  try {
+    if (localStorage.getItem('mth-chat-seen')) chatToggle.classList.add('no-ping');
+  } catch(e){ /* ignore */ }
+  function markChatSeen(){
+    chatToggle.classList.add('no-ping');
+    try { localStorage.setItem('mth-chat-seen', '1'); } catch(e){ /* ignore */ }
+  }
   function setChat(open){
     if (open){
       chatPanel.classList.add('open');
       requestAnimationFrame(() => chatPanel.classList.add('show'));
+      markChatSeen();
     } else {
       chatPanel.classList.remove('show');
       setTimeout(() => chatPanel.classList.remove('open'), 250);
@@ -134,6 +153,10 @@
   }
   chatToggle.addEventListener('click', () => setChat(!chatPanel.classList.contains('open')));
   chatClose.addEventListener('click', () => setChat(false));
+  window.openPortfolioChat = () => setChat(true);
+  document.querySelectorAll('[data-open-chat]').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); setChat(true); });
+  });
 
   const resumeBtn = document.getElementById('resumeBtn');
   if (resumeBtn && (!resumeBtn.getAttribute('href') || resumeBtn.getAttribute('href') === '#')){
@@ -175,7 +198,7 @@
   // ---------- Twinkling sparkle field (kept deliberately light) ----------
   const sparkleField = document.getElementById('sparkleField');
   if (sparkleField && !reducedMotion){
-    const colors = ['#3FE3C4', '#4C8DFF', '#8B6CFF'];
+    const colors = ['#22E6FF', '#3B8CFF', '#8CC8FF'];
     const count = window.innerWidth < 640 ? 8 : 16;
     const frag = document.createDocumentFragment();
     for (let i = 0; i < count; i++){
@@ -225,6 +248,74 @@
     tiltStage.addEventListener('mouseleave', () => {
       tiltContainer.classList.add('resetting');
       tiltContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    });
+  }
+
+  // ---------- Detail lightbox (Gallery photos + Research papers) ----------
+  const galleryModal = document.getElementById('galleryModal');
+  if (galleryModal){
+    const modalScrim = document.getElementById('galleryModalScrim');
+    const modalClose = document.getElementById('galleryModalClose');
+    const modalMedia = document.getElementById('galleryModalMedia');
+    const modalTitle = document.getElementById('galleryModalTitle');
+    const modalDesc = document.getElementById('galleryModalDesc');
+    const modalTag = document.getElementById('galleryModalTag');
+    let lastFocused = null;
+
+    function openGalleryModal(trigger){
+      const isResearch = trigger.hasAttribute('data-detail');
+      const title = trigger.dataset.title || '';
+      const desc = trigger.dataset.desc || '';
+      const img = trigger.dataset.img;
+      const link = trigger.dataset.link;
+      const linkLabel = trigger.dataset.linkLabel || 'View source ↗';
+
+      modalTag.textContent = isResearch ? 'Research' : 'Milestone';
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+
+      if (isResearch){
+        modalMedia.style.display = 'none';
+      } else {
+        modalMedia.style.display = 'flex';
+        modalMedia.innerHTML = img
+          ? `<img src="${img}" alt="${title}">`
+          : `<div class="media-placeholder">Photo pending upload —<br>swap in a real image via this slot's data-img attribute</div>`;
+      }
+
+      const existingLink = modalMedia.parentElement.querySelector('.modal-link');
+      if (existingLink) existingLink.remove();
+      if (link){
+        const a = document.createElement('a');
+        a.href = link; a.target = '_blank'; a.rel = 'noopener';
+        a.className = 'modal-link mono';
+        a.textContent = linkLabel;
+        document.getElementById('galleryModalDesc').insertAdjacentElement('afterend', a);
+      }
+
+      lastFocused = document.activeElement;
+      galleryModal.classList.add('open');
+      galleryModal.setAttribute('aria-hidden', 'false');
+      modalClose.focus();
+      document.body.classList.add('drawer-open');
+    }
+    function closeGalleryModal(){
+      galleryModal.classList.remove('open');
+      galleryModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('drawer-open');
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-gallery], [data-detail]').forEach(slot => {
+      slot.addEventListener('click', () => openGalleryModal(slot));
+      slot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGalleryModal(slot); }
+      });
+    });
+    modalScrim.addEventListener('click', closeGalleryModal);
+    modalClose.addEventListener('click', closeGalleryModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && galleryModal.classList.contains('open')) closeGalleryModal();
     });
   }
 
