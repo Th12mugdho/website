@@ -67,7 +67,7 @@ const RAG_CONFIG = {
   function answerLocal(question, chunks){
     if (!chunks.length){
       return {
-        answer: "I don't have anything on that in my knowledge base yet — try asking about Payra, MechaHex, his publications, leadership roles, or how to get in touch.",
+        answer: "I don't have anything on that in my knowledge base yet — try asking about Payra, MechaHex, his publications, leadership roles, or how to get in touch. Or just email him directly at tasneemulhassan12@gmail.com.",
         sources: []
       };
     }
@@ -111,12 +111,9 @@ const RAG_CONFIG = {
     return el;
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const question = input.value.trim();
+  async function ask(question){
     if (!question) return;
     appendMessage(question, "user");
-    input.value = "";
     sendBtn.disabled = true;
 
     const chunks = retrieve(question, RAG_CONFIG.topK);
@@ -140,6 +137,26 @@ const RAG_CONFIG = {
     } finally {
       sendBtn.disabled = false;
     }
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    input.value = "";
+    await ask(question);
+  });
+
+  // Suggested-question chips — one tap fires the same retrieval pipeline
+  // as typing a question, so first-time visitors see the assistant work
+  // without needing to think of a prompt themselves.
+  document.querySelectorAll(".chat-chip[data-question]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      const q = chip.dataset.question;
+      const suggestions = chip.closest(".chat-suggestions");
+      if (suggestions) suggestions.remove();
+      ask(q);
+    });
   });
 })();
 
