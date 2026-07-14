@@ -120,6 +120,6 @@ window.KNOWLEDGE_BASE = [
     id: "contact",
     category: "Contact",
     keywords: ["contact", "email", "linkedin", "github", "reach", "hire", "connect"],
-    text: "You can reach Tasneemul at tasneemulhassan12@gmail.com, on LinkedIn at linkedin.com/in/tasneemulhassan12, on GitHub at github.com/Th12mugdho, or through his personal site at thm.lovable.app. He's open to robotics, embedded systems, and research-engineering roles."
+    text: "You can reach Tasneemul at tasneemulhassan12@gmail.com, on LinkedIn at linkedin.com/in/tasneemulhassan12, on GitHub at github.com/Th12mugdho, or through his personal site at bueec.com. He's open to robotics, embedded systems, and research-engineering roles."
   }
 ];
