@@ -254,6 +254,16 @@
   // ---------- Detail lightbox (Gallery photos + Research papers) ----------
   const galleryModal = document.getElementById('galleryModal');
   if (galleryModal){
+    // Render a cropped thumbnail + caption overlay for any tile that has
+    // a real photo set via data-img, so photos slot in with consistent
+    // framing the moment they're added — no markup changes needed.
+    document.querySelectorAll('[data-gallery][data-img]').forEach(slot => {
+      const img = slot.dataset.img;
+      const title = slot.dataset.title || '';
+      const caption = slot.innerHTML;
+      slot.innerHTML = `<img src="${img}" alt="${title}" class="gallery-thumb"><span class="gallery-caption">${caption}</span>`;
+    });
+
     const modalScrim = document.getElementById('galleryModalScrim');
     const modalClose = document.getElementById('galleryModalClose');
     const modalMedia = document.getElementById('galleryModalMedia');
