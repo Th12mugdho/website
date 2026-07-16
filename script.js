@@ -1,4 +1,30 @@
 (function(){
+  // ---------- Preloader boot sequence ----------
+  const preloader = document.getElementById('preloader');
+  if (preloader){
+    const reduceMotionPref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let alreadyBooted = false;
+    try { alreadyBooted = sessionStorage.getItem('mth-booted') === '1'; } catch(e){ /* ignore */ }
+
+    function dismissPreloader(){
+      preloader.classList.add('hide');
+      document.body.style.overflow = '';
+      setTimeout(() => { preloader.style.display = 'none'; }, 550);
+      try { sessionStorage.setItem('mth-booted', '1'); } catch(e){ /* ignore */ }
+    }
+
+    if (alreadyBooted || reduceMotionPref){
+      preloader.style.transition = 'none';
+      dismissPreloader();
+      preloader.style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
+      const fill = document.getElementById('preloaderFill');
+      requestAnimationFrame(() => { if (fill) fill.style.width = '100%'; });
+      setTimeout(dismissPreloader, 1450);
+    }
+  }
+
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   let theme = 'dark';
