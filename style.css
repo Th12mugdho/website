@@ -683,3 +683,52 @@ header.site-nav{ padding-top:env(safe-area-inset-top); }
   .project-card, .ach-col, .testimonial-card{ break-inside:avoid; margin-bottom:14px; border:1px solid #ddd; }
   .hero-image-stage{ display:none; }
 }
+
+/* ============================================================
+   PRELOADER — brief HUD boot sequence on first load. Runs on a
+   fixed timer (not tied to asset loading) so it reads as an
+   intentional "systems online" beat rather than a stalled spinner.
+   Skipped after the first visit in a session (sessionStorage) and
+   skipped entirely under prefers-reduced-motion.
+============================================================ */
+.preloader{
+  position:fixed; inset:0; z-index:9999;
+  background:var(--bg);
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity .5s ease, visibility .5s ease;
+}
+.preloader::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 85%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 85%);
+}
+.preloader.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+.preloader-inner{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:22px; width:280px; }
+.preloader-mark{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-size:15px; font-weight:600; letter-spacing:.14em;
+  color:var(--text);
+}
+.preloader-lines{ display:flex; flex-direction:column; gap:7px; align-items:center; min-height:76px; }
+.pl-line{
+  font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted-2);
+  opacity:0; transform:translateY(4px);
+  animation:plFadeIn .4s ease forwards;
+  animation-delay:calc(var(--d, 0) * 0.32s);
+}
+.pl-line[data-delay="0"]{ --d:0; }
+.pl-line[data-delay="1"]{ --d:1; }
+.pl-line[data-delay="2"]{ --d:2; }
+.pl-line[data-delay="3"]{ --d:3; color:var(--cyan); }
+@keyframes plFadeIn{ to{ opacity:1; transform:translateY(0); } }
+.pl-dots::after{ content:""; display:inline-block; width:1.2em; text-align:left; animation:plDots 1.1s steps(4) infinite; }
+@keyframes plDots{ 0%{content:"";} 25%{content:".";} 50%{content:"..";} 75%{content:"...";} }
+.preloader-bar{ width:100%; height:2px; background:var(--glass-border); border-radius:2px; overflow:hidden; }
+.preloader-bar-fill{ height:100%; width:0%; background:var(--grad); transition:width 1.3s cubic-bezier(.4,0,.2,1); }
+@media (prefers-reduced-motion: reduce){
+  .preloader{ transition:none; }
+  .pl-line{ animation:none; opacity:1; transform:none; }
+}
