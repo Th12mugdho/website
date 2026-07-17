@@ -21,7 +21,7 @@
       document.body.style.overflow = 'hidden';
       const fill = document.getElementById('preloaderFill');
       requestAnimationFrame(() => { if (fill) fill.style.width = '100%'; });
-      setTimeout(dismissPreloader, 1450);
+      setTimeout(dismissPreloader, 2300);
     }
   }
 
