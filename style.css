@@ -102,6 +102,8 @@ body.anim-paused .logo-dot, body.anim-paused .eyebrow .dot, body.anim-paused .he
 :focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; border-radius:2px; }
 
 header.site-nav{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 20px; }
+.scroll-rail{ position:fixed; top:0; left:0; right:0; height:2px; z-index:150; background:transparent; pointer-events:none; }
+.scroll-rail-fill{ height:100%; width:100%; background:var(--grad); transform:scaleX(0); transform-origin:0 0; will-change:transform; }
 .nav-capsule{
   display:flex; align-items:center; gap:6px;
   background:var(--glass-strong); border:1px solid var(--glass-border);
@@ -387,6 +389,13 @@ main section:not(#home){ content-visibility:auto; contain-intrinsic-size:auto 90
   padding:20px 10px 10px; text-align:center;
   background:linear-gradient(to top, rgba(4,7,12,0.85), transparent);
   color:var(--text);
+}
+.pending{ border-style:dashed !important; border-color:rgba(150,210,255,0.22) !important; }
+.pending-tag{
+  position:absolute; top:10px; right:10px; z-index:5;
+  font-size:8px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-2);
+  border:1px dashed var(--glass-border); padding:3px 7px; border-radius:2px;
+  background:var(--bg-1); pointer-events:none;
 }
 
 .gallery-modal{
