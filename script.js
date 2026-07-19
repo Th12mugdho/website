@@ -66,9 +66,10 @@
   // once. It's replaced by a pure-CSS hover glow in style.css (`.glass:hover::before`),
   // which costs nothing until a card is actually hovered.
 
-  // ---------- Nav capsule scroll state + back-to-top visibility (rAF-throttled) ----------
+  // ---------- Nav capsule scroll state + back-to-top + scroll-rail (rAF-throttled) ----------
   const navCapsule = document.getElementById('navCapsule');
   const backTop = document.getElementById('backTop');
+  const scrollRailFill = document.getElementById('scrollRailFill');
   let scrollQueued = false;
   window.addEventListener('scroll', () => {
     if (scrollQueued) return;
@@ -76,6 +77,11 @@
     requestAnimationFrame(() => {
       navCapsule.classList.toggle('scrolled', window.scrollY > 30);
       if (backTop) backTop.classList.toggle('show', window.scrollY > 600);
+      if (scrollRailFill){
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+        scrollRailFill.style.transform = `scaleX(${pct})`;
+      }
       scrollQueued = false;
     });
   }, { passive:true });
@@ -288,6 +294,16 @@
       const title = slot.dataset.title || '';
       const caption = slot.innerHTML;
       slot.innerHTML = `<img src="${img}" alt="${title}" class="gallery-thumb"><span class="gallery-caption">${caption}</span>`;
+    });
+    // Tiles still awaiting a real photo get a dashed border + small
+    // "Pending" tag, so unfinished content is visually distinct from
+    // finished content rather than looking like a bug.
+    document.querySelectorAll('[data-gallery]:not([data-img])').forEach(slot => {
+      slot.classList.add('pending');
+      const tag = document.createElement('span');
+      tag.className = 'pending-tag mono';
+      tag.textContent = 'Pending';
+      slot.appendChild(tag);
     });
 
     const modalScrim = document.getElementById('galleryModalScrim');
