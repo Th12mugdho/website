@@ -34,7 +34,11 @@
     try { localStorage.setItem('mth-theme', t); } catch(e){ /* storage unavailable — theme just won't persist */ }
   }
   let savedTheme = 'dark';
-  try { savedTheme = localStorage.getItem('mth-theme') || 'dark'; } catch(e){ /* ignore */ }
+  try {
+    const saved = localStorage.getItem('mth-theme');
+    const sysLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    savedTheme = saved || (sysLight ? 'light' : 'dark');
+  } catch(e){ /* ignore */ }
   applyTheme(savedTheme);
   toggle.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark'));
 
@@ -165,6 +169,8 @@
   const chatToggle = document.getElementById('chatToggle');
   const chatPanel = document.getElementById('chatPanel');
   const chatClose = document.getElementById('chatClose');
+  const chatInput = document.getElementById('chatInput');
+  let chatLastFocused = null;
   try {
     if (localStorage.getItem('mth-chat-seen')) chatToggle.classList.add('no-ping');
   } catch(e){ /* ignore */ }
@@ -174,17 +180,23 @@
   }
   function setChat(open){
     if (open){
+      chatLastFocused = document.activeElement;
       chatPanel.classList.add('open');
       requestAnimationFrame(() => chatPanel.classList.add('show'));
       markChatSeen();
+      if (chatInput) setTimeout(() => chatInput.focus(), 260);
     } else {
       chatPanel.classList.remove('show');
       setTimeout(() => chatPanel.classList.remove('open'), 250);
+      if (chatLastFocused) chatLastFocused.focus();
     }
     chatToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
   chatToggle.addEventListener('click', () => setChat(!chatPanel.classList.contains('open')));
   chatClose.addEventListener('click', () => setChat(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chatPanel.classList.contains('open')) setChat(false);
+  });
   window.openPortfolioChat = () => setChat(true);
   document.querySelectorAll('[data-open-chat]').forEach(el => {
     el.addEventListener('click', (e) => { e.preventDefault(); setChat(true); });
