@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <script>try{document.documentElement.setAttribute('data-theme', localStorage.getItem('mth-theme') || 'dark');}catch(e){}</script>
+  <script>try{var saved=localStorage.getItem('mth-theme');var sys=(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme', saved || sys);}catch(e){}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Md. Tasneemul Hassan — Robotics & Electronics Engineer</title>
   <meta name="description" content="Portfolio of Md. Tasneemul Hassan — EEE engineer specializing in robotics, autonomous systems, and electronics." />
+  <link rel="canonical" href="https://www.bueec.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Md. Tasneemul Hassan — Robotics & Electronics Engineer" />
@@ -39,7 +40,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
