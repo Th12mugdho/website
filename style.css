@@ -6,7 +6,7 @@
   --glass-border:  rgba(150,210,255,0.14);
   --text:          #E7F1F7;
   --muted:         #8CA0B3;
-  --muted-2:       #556376;
+  --muted-2:       #6E8095;
   --violet:        #2451D6;
   --blue:          #3B8CFF;
   --cyan:          #22E6FF;
@@ -27,7 +27,7 @@
   --glass-border:  rgba(10,30,45,0.12);
   --text:          #0A1420;
   --muted:         #46586B;
-  --muted-2:       #7A8CA0;
+  --muted-2:       #5A6C80;
   --grid-line:     rgba(10,30,45,0.04);
   --shadow-glow:   0 0 0 1px rgba(34,150,200,0.18), 0 10px 34px rgba(34,150,200,0.10);
 }
@@ -159,7 +159,7 @@ nav.links a.active{ color:var(--cyan); }
   font-size: clamp(42px, 6vw, 76px); 
   line-height: 1.05; 
   margin-top: 16px; 
-  font-weight: 800; 
+  font-weight: 700; 
   text-transform: uppercase;
 }
 .text-cyan { color: var(--cyan); }
