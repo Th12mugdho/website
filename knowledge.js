@@ -24,7 +24,13 @@ window.KNOWLEDGE_BASE = [
     id: "summary",
     category: "About",
     keywords: ["who", "about", "summary", "background", "intro", "engineer"],
-    text: "Md. Tasneemul Hassan is a BSc graduate in Electrical and Electronic Engineering from BRAC University (expected Dec 2026), specializing in robotics, intelligent systems, and electronics. He currently serves as President of the BRAC University Electrical and Electronics Club (BUEEC) and leads a five-member team building Payra, an autonomous delivery drone."
+    text: "Md. Tasneemul Hassan is a BSc graduate in Electrical and Electronic Engineering from BRAC University (expected Dec 2026), specializing in robotics, intelligent systems, and electronics. He has built 8+ hands-on projects spanning robotics, embedded systems, and analog/digital electronics. He currently serves as President of the BRAC University Electrical and Electronics Club (BUEEC) and leads a five-member team building Payra, an autonomous delivery drone."
+  },
+  {
+    id: "testimonials",
+    category: "Testimonials",
+    keywords: ["testimonial", "recommendation", "reference", "review", "quote", "endorsement"],
+    text: "Tasneemul's portfolio includes a testimonials section for recommendations from professors, mentors, and collaborators, which is currently being populated. For direct references or to discuss his work, the best route is reaching out via email or LinkedIn."
   },
   {
     id: "education",
@@ -113,8 +119,8 @@ window.KNOWLEDGE_BASE = [
   {
     id: "skills",
     category: "Skills",
-    keywords: ["skills", "toolchain", "stack", "programming", "languages", "tools"],
-    text: "Tasneemul's toolchain spans C++, Python & NumPy, ROS2 and Gazebo, PX4 Autopilot, Arduino/ESP32, SPICE/PCB design, and applied machine learning. He's also comfortable with English, Bengali, and Spanish at a professional level."
+    keywords: ["skills", "toolchain", "stack", "programming", "languages", "tools", "matrix", "proficiency"],
+    text: "Tasneemul's toolchain spans C++, Python & NumPy, ROS2 and Gazebo, PX4 Autopilot, Arduino/ESP32, SPICE/PCB design, CMOS/VLSI, and applied machine learning. His skills matrix groups these into Embedded & Firmware (Arduino/ESP32, Pixhawk/PX4, Raspberry Pi — applied in projects), Simulation & Hardware Design (ROS2/Gazebo applied in projects; SPICE, PCB design, and CMOS/VLSI from coursework and labs), and Software & ML (C++ and Python/NumPy applied in projects, machine learning applied in research). He's also comfortable with English, Bengali, and Spanish at a professional level."
   },
   {
     id: "contact",
