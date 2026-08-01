@@ -54,7 +54,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); margin:0; letter-spacing:-0.02em; 
 p{ margin:0; }
 .mono{ font-family:var(--font-mono); }
 .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
-img{ max-width:100%; display:block; }
+img{ max-width:100%; display:block; -webkit-user-drag:none; user-drag:none; -webkit-touch-callout:none; }
 button{ font-family:inherit; cursor:pointer; background:none; border:none; color:inherit; }
 
 ::selection{ background:var(--cyan); color:#04141A; }
