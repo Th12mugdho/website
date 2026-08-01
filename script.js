@@ -3,17 +3,14 @@
   const preloader = document.getElementById('preloader');
   if (preloader){
     const reduceMotionPref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let alreadyBooted = false;
-    try { alreadyBooted = sessionStorage.getItem('mth-booted') === '1'; } catch(e){ /* ignore */ }
 
     function dismissPreloader(){
       preloader.classList.add('hide');
       document.body.style.overflow = '';
       setTimeout(() => { preloader.style.display = 'none'; }, 550);
-      try { sessionStorage.setItem('mth-booted', '1'); } catch(e){ /* ignore */ }
     }
 
-    if (alreadyBooted || reduceMotionPref){
+    if (reduceMotionPref){
       preloader.style.transition = 'none';
       dismissPreloader();
       preloader.style.display = 'none';
@@ -24,6 +21,11 @@
       setTimeout(dismissPreloader, 2300);
     }
   }
+
+  // ---------- Disable image dragging (prevents drag-out from exposing the hotlinked source URL) ----------
+  document.addEventListener('dragstart', (e) => {
+    if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+  });
 
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
@@ -305,7 +307,7 @@
       const img = slot.dataset.img;
       const title = slot.dataset.title || '';
       const caption = slot.innerHTML;
-      slot.innerHTML = `<img src="${img}" alt="${title}" class="gallery-thumb"><span class="gallery-caption">${caption}</span>`;
+      slot.innerHTML = `<img src="${img}" alt="${title}" class="gallery-thumb" draggable="false"><span class="gallery-caption">${caption}</span>`;
     });
     // Tiles still awaiting a real photo get a dashed border + small
     // "Pending" tag, so unfinished content is visually distinct from
@@ -343,7 +345,7 @@
       } else {
         modalMedia.style.display = 'flex';
         modalMedia.innerHTML = img
-          ? `<img src="${img}" alt="${title}">`
+          ? `<img src="${img}" alt="${title}" draggable="false">`
           : `<div class="media-placeholder">Photo pending upload —<br>swap in a real image via this slot's data-img attribute</div>`;
       }
 
