@@ -27,6 +27,11 @@
     if (e.target && e.target.tagName === 'IMG') e.preventDefault();
   });
 
+  // ---------- Stop clicks on nested links from also triggering their parent card's click handler ----------
+  document.querySelectorAll('.js-stop-propagation').forEach(el => {
+    el.addEventListener('click', (e) => e.stopPropagation());
+  });
+
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   let theme = 'dark';
@@ -300,12 +305,21 @@
   // ---------- Detail lightbox (Gallery photos + Research papers) ----------
   const galleryModal = document.getElementById('galleryModal');
   if (galleryModal){
+    // Escapes text before it's interpolated into innerHTML below. The values
+    // here come from this site's own static data-* attributes today, but
+    // escaping is cheap insurance against a future edit routing untrusted
+    // text (e.g. a CMS field) through the same code path.
+    function escapeHTML(str){
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
     // Render a cropped thumbnail + caption overlay for any tile that has
     // a real photo set via data-img, so photos slot in with consistent
     // framing the moment they're added — no markup changes needed.
     document.querySelectorAll('[data-gallery][data-img]').forEach(slot => {
-      const img = slot.dataset.img;
-      const title = slot.dataset.title || '';
+      const img = escapeHTML(slot.dataset.img);
+      const title = escapeHTML(slot.dataset.title || '');
       const caption = slot.innerHTML;
       slot.innerHTML = `<img src="${img}" alt="${title}" class="gallery-thumb" draggable="false"><span class="gallery-caption">${caption}</span>`;
     });
@@ -345,7 +359,7 @@
       } else {
         modalMedia.style.display = 'flex';
         modalMedia.innerHTML = img
-          ? `<img src="${img}" alt="${title}" draggable="false">`
+          ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(title)}" draggable="false">`
           : `<div class="media-placeholder">Photo pending upload —<br>swap in a real image via this slot's data-img attribute</div>`;
       }
 
