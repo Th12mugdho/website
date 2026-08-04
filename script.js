@@ -339,22 +339,51 @@
     const modalMedia = document.getElementById('galleryModalMedia');
     const modalTitle = document.getElementById('galleryModalTitle');
     const modalDesc = document.getElementById('galleryModalDesc');
+    const modalSections = document.getElementById('galleryModalSections');
     const modalTag = document.getElementById('galleryModalTag');
+    const modalBody = document.querySelector('.gallery-modal-body');
     let lastFocused = null;
 
     function openGalleryModal(trigger){
-      const isResearch = trigger.hasAttribute('data-detail');
+      const isTextOnly = trigger.hasAttribute('data-detail');
       const title = trigger.dataset.title || '';
       const desc = trigger.dataset.desc || '';
       const img = trigger.dataset.img;
       const link = trigger.dataset.link;
       const linkLabel = trigger.dataset.linkLabel || 'View source ↗';
+      const tag = trigger.dataset.tag || (isTextOnly ? 'Research' : 'Milestone');
+      const problem = trigger.dataset.problem;
+      const approach = trigger.dataset.approach;
+      const outcome = trigger.dataset.outcome;
 
-      modalTag.textContent = isResearch ? 'Research' : 'Milestone';
+      modalTag.textContent = tag;
       modalTitle.textContent = title;
-      modalDesc.textContent = desc;
 
-      if (isResearch){
+      // Case-study cards (Problem/Approach/Outcome) render as labeled
+      // sections instead of a single paragraph; everything else keeps
+      // the simple single-description format.
+      modalSections.innerHTML = '';
+      if (problem || approach || outcome){
+        modalDesc.style.display = 'none';
+        modalDesc.textContent = '';
+        [['Problem', problem], ['Approach', approach], ['Outcome', outcome]].forEach(([label, text]) => {
+          if (!text) return;
+          const section = document.createElement('div');
+          section.className = 'modal-section';
+          const h4 = document.createElement('h4');
+          h4.textContent = label;
+          const p = document.createElement('p');
+          p.textContent = text;
+          section.appendChild(h4);
+          section.appendChild(p);
+          modalSections.appendChild(section);
+        });
+      } else {
+        modalDesc.style.display = '';
+        modalDesc.textContent = desc;
+      }
+
+      if (isTextOnly){
         modalMedia.style.display = 'none';
       } else {
         modalMedia.style.display = 'flex';
@@ -363,14 +392,14 @@
           : `<div class="media-placeholder">Photo pending upload —<br>swap in a real image via this slot's data-img attribute</div>`;
       }
 
-      const existingLink = modalMedia.parentElement.querySelector('.modal-link');
+      const existingLink = modalBody.querySelector('.modal-link');
       if (existingLink) existingLink.remove();
       if (link){
         const a = document.createElement('a');
         a.href = link; a.target = '_blank'; a.rel = 'noopener';
         a.className = 'modal-link mono';
         a.textContent = linkLabel;
-        document.getElementById('galleryModalDesc').insertAdjacentElement('afterend', a);
+        modalBody.appendChild(a);
       }
 
       lastFocused = document.activeElement;
