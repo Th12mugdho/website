@@ -271,7 +271,12 @@
       </div>
 
       <div class="project-grid" id="robotics" data-panel="robotics">
-        <article class="glass project-card reveal">
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail
+            data-title="Payra — Autonomous Delivery Hexacopter"
+            data-tag="Final Year Design Project"
+            data-problem="Last-mile food and medicine delivery in Dhaka is slowed by traffic congestion and limited road access in dense neighborhoods. Payra explores a non-landing aerial delivery model — lowering the payload via a smart delivery box instead of landing — to avoid unsafe or impractical landings in crowded urban areas."
+            data-approach="Built around a Pixhawk flight controller running PX4, with an ESP32-based smart delivery box using IMU-driven active fan stabilization to keep the payload level while it's lowered. The full system — flight dynamics, delivery box behavior, and mission logic — was validated in Gazebo via PX4 SITL over a ROS2 pipeline, built collaboratively with a five-member team as the Final Year Design Project."
+            data-outcome="Simulation-validated in Gazebo/PX4 SITL, with physical hardware assembly (hexacopter frame, ESP32 delivery box) currently underway, alongside a completed FYDP design report covering system specifications, requirements, constraints, and trade-off analysis.">
           <span class="ros-badge">ROS2 · PX4</span>
           <span class="tag">Final Year Design Project</span>
           <h3>Payra — Autonomous Delivery Hexacopter</h3>
@@ -282,7 +287,12 @@
             <span>Gazebo SITL simulation</span>
           </div>
         </article>
-        <article class="glass project-card reveal" style="transition-delay:.01s;">
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.01s;"
+            data-title="MechaHex — Six-Legged Hexapod"
+            data-tag="Bio-inspired locomotion"
+            data-problem="Wheeled robots struggle on uneven or unstructured terrain — a common limitation for exploration and inspection robotics. MechaHex explores a legged alternative to improve terrain adaptability."
+            data-approach="A six-legged hexapod running a bio-inspired tripod gait — three legs move together while the other three stay planted, alternating for continuous stable motion — controlled by an Arduino-based system with servo motors and ultrasonic sensors for obstacle detection, on a custom 3D-printed chassis, with custom trajectory-planning algorithms driving walking, turning, and obstacle avoidance."
+            data-outcome="A functioning hexapod capable of stable walking, turning, and obstacle avoidance, since field-tested on uneven outdoor terrain to validate the gait and obstacle-avoidance routines outside a controlled lab setting.">
           <span class="tag">Bio-inspired locomotion</span>
           <h3>MechaHex — Six-Legged Hexapod</h3>
           <p>A six-legged hexapod robot navigating terrain via a tripod gait, with real-time motor coordination and trajectory planning for stable walking, turning, and obstacle avoidance.</p>
@@ -292,7 +302,10 @@
             <span>Ultrasonic sensing</span>
           </div>
         </article>
-        <article class="glass project-card reveal" style="transition-delay:.03s;">
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.03s;"
+            data-title="Live Surveillance Node"
+            data-tag="Embedded vision"
+            data-desc="A compact surveillance system built on a Raspberry Pi Zero 2W with a Flask-based web app for real-time video streaming and remote monitoring — designed to run on minimal, low-cost embedded hardware rather than a full desktop or server.">
           <span class="tag">Embedded vision</span>
           <h3>Live Surveillance Node</h3>
           <p>A compact surveillance system built on a Raspberry Pi Zero 2W with a Flask-based web app for real-time video streaming and remote monitoring.</p>
@@ -301,7 +314,10 @@
             <span>Flask streaming server</span>
           </div>
         </article>
-        <article class="glass project-card reveal" style="transition-delay:.04s;">
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.04s;"
+            data-title="Payra — FYDP Design Report"
+            data-tag="Docs & systems design"
+            data-desc="Formal design documentation for the Payra platform, covering system specifications, requirements engineering, design constraints, and conflicting-requirement trade-off tables, alongside URDF/xacro modeling of the airframe for simulation.">
           <span class="tag">Docs &amp; systems design</span>
           <h3>Payra — FYDP Design Report</h3>
           <p>Formal design documentation covering system specifications, requirements, constraints, and conflicting-requirement trade-off tables for the delivery drone platform.</p>
@@ -313,7 +329,10 @@
       </div>
 
       <div class="project-grid" id="electronics" data-panel="electronics" style="display:none;">
-        <article class="glass project-card">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-title="Active Filter Design Suite"
+            data-tag="Analog design"
+            data-desc="For EEE308 (Electronic Circuits II): transfer function derivation, Bode plot analysis, and active filter design using Multiple Feedback (MFB) and Twin-T topologies, visualized with interactive Chart.js tooling to explore how component values shift the frequency response.">
           <span class="tag">Analog design</span>
           <h3>Active Filter Design Suite</h3>
           <p>Transfer function derivation, Bode plot analysis, and active filter design using Multiple Feedback (MFB) and Twin-T topologies, visualized with interactive Chart.js tooling.</p>
@@ -322,7 +341,10 @@
             <span>Bode analysis</span>
           </div>
         </article>
-        <article class="glass project-card">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-title="CMOS Delay &amp; Sizing Study"
+            data-tag="VLSI"
+            data-desc="Elmore delay modeling and transistor sizing across pull-up/pull-down networks for CMOS digital logic, paired with Boolean minimization via Karnaugh maps to simplify the underlying logic before sizing.">
           <span class="tag">VLSI</span>
           <h3>CMOS Delay &amp; Sizing Study</h3>
           <p>Elmore delay modeling and transistor sizing across pull-up/pull-down networks, paired with Boolean minimization via Karnaugh maps for digital logic design.</p>
@@ -331,7 +353,10 @@
             <span>PDN / PUN sizing</span>
           </div>
         </article>
-        <article class="glass project-card">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-title="EPR Spectroscopy of DPPH"
+            data-tag="Applied physics research"
+            data-desc="Research assistantship at Allegheny College under Prof. Doros Petasis, examining unpaired-electron magnetic moments in DPPH free radicals using a Varian E-3 X-band EPR spectrometer with a liquid-nitrogen flow cryostat.">
           <span class="tag">Applied physics research</span>
           <h3>EPR Spectroscopy of DPPH</h3>
           <p>Research assistantship at Allegheny College examining unpaired-electron magnetic moments in DPPH using a Varian E-3 X-band EPR spectrometer with liquid-nitrogen cryostat.</p>
@@ -340,7 +365,10 @@
             <span>Room-temp measurement</span>
           </div>
         </article>
-        <article class="glass project-card">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-title="Modulation &amp; Transform Toolkit"
+            data-tag="Signals"
+            data-desc="Worked problem sets and simulations spanning Fourier series/transforms, AM modulation-demodulation, Laplace transforms, and VHDL event-driven simulation with transport delays — bridging the analog signal-processing math with a hardware description language implementation.">
           <span class="tag">Signals</span>
           <h3>Modulation &amp; Transform Toolkit</h3>
           <p>Worked problem sets and simulations spanning Fourier series/transforms, AM modulation-demodulation, Laplace transforms, and VHDL event-driven simulation with transport delays.</p>
@@ -642,6 +670,7 @@
       <span class="sec-tag" id="galleryModalTag">Milestone</span>
       <h3 id="galleryModalTitle"></h3>
       <p id="galleryModalDesc"></p>
+      <div class="modal-sections" id="galleryModalSections"></div>
     </div>
   </div>
 </div>
