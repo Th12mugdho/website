@@ -351,6 +351,8 @@ main section:not(#home){ content-visibility:auto; contain-intrinsic-size:auto 90
 .paper-clickable{ cursor:pointer; transition:border-color .3s ease, transform .3s ease; }
 .paper-clickable:hover{ border-color:rgba(34,230,255,0.3); transform:translateY(-2px); }
 .paper-clickable:focus-visible{ border-color:var(--cyan); }
+.project-clickable{ cursor:pointer; }
+.project-clickable:focus-visible{ border-color:var(--cyan); }
 @media (max-width:640px){ .paper{ grid-template-columns:1fr; } .paper .status{ text-align:left; } }
 
 .ach-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -436,6 +438,11 @@ main section:not(#home){ content-visibility:auto; contain-intrinsic-size:auto 90
 .gallery-modal-body{ padding:26px 28px 28px; }
 .gallery-modal-body h3{ margin-top:12px; font-size:22px; font-weight:600; text-transform:uppercase; letter-spacing:-0.01em; }
 .gallery-modal-body p{ margin-top:12px; color:var(--muted); font-size:14.5px; line-height:1.65; }
+.modal-sections{ display:flex; flex-direction:column; gap:16px; }
+.modal-section{ padding-top:14px; border-top:1px solid var(--glass-border); }
+.modal-section:first-child{ border-top:none; padding-top:0; margin-top:12px; }
+.modal-section h4{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--cyan); font-weight:500; margin:0; }
+.modal-section p{ margin-top:8px; color:var(--muted); font-size:14px; line-height:1.65; }
 .modal-link{
   display:inline-flex; align-items:center; gap:6px; margin-top:16px;
   font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--cyan);
