@@ -24,9 +24,9 @@
 [data-theme="light"]{
   --bg:            #123F7A;
   --bg-1:          #0F3770;
-  --glass:         rgba(255,255,255,0.045);
-  --glass-strong:  rgba(255,255,255,0.09);
-  --glass-border:  rgba(255,255,255,0.30);
+  --glass:         #0B2B5A;   /* solid panels so the paper grid doesn't show through */
+  --glass-strong:  #143D78;
+  --glass-border:  rgba(255,255,255,0.34);
   --text:          #F4F8FF;
   --muted:         #D2E0F3;
   --muted-2:       #B4C9E6;
@@ -37,7 +37,7 @@
   --grid-line:     rgba(255,255,255,0.075);
   --shadow-glow:   0 0 0 1px rgba(255,255,255,0.25), 0 10px 34px rgba(0,10,30,0.25);
 }
-[data-theme="light"] .glass{ backdrop-filter:none; -webkit-backdrop-filter:none; }
+[data-theme="light"] .glass{ backdrop-filter:none; -webkit-backdrop-filter:none; box-shadow:0 14px 34px rgba(3,14,36,.38), inset 0 1px 0 rgba(255,255,255,.06); }
 [data-theme="light"] .hero-image-frame::after{ box-shadow: inset 0 0 50px 6px rgba(10,40,90,0.45); }
 [data-theme="light"] .glass::after{ opacity:.8; }
 
@@ -82,10 +82,10 @@ button{ font-family:inherit; cursor:pointer; background:none; border:none; color
 /* Blueprint: drafting-paper grid (fine 14px + major 70px) across the whole page */
 [data-theme="light"] .hud-grid{
   background-image:
-    linear-gradient(rgba(255,255,255,0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.13) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.085) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size:70px 70px, 70px 70px, 14px 14px, 14px 14px;
   -webkit-mask-image:none; mask-image:none;
 }
@@ -1318,3 +1318,70 @@ details.m-collapse > summary::-webkit-details-marker{ display:none; }
   .led-dot{ fill:#3DDC97; }
   .hero-image-frame{ box-shadow:0 0 0 1px rgba(34,230,255,.5), 0 0 34px rgba(34,230,255,.2); }
 }
+
+/* ============================================================
+   BLUEPRINT REFINEMENTS — make "light" mode read like a real
+   engineering drawing: amber markup accent,
+   lit paper, registration marks, title block.
+============================================================ */
+:root{ --markup:#FFC857; }
+.title-block{ display:none; }
+
+[data-theme="light"] body{
+  background:
+    radial-gradient(ellipse 85% 70% at 50% 28%, #1A4E92 0%, #133F7B 55%, #0D3166 100%) fixed;
+}
+
+/* amber "markup pencil" for the things that should catch the eye */
+[data-theme="light"] .text-cyan,
+[data-theme="light"] .sec-tag,
+[data-theme="light"] .hero-subtitle,
+[data-theme="light"] .cmd-prompt,
+[data-theme="light"] .tl-date,
+[data-theme="light"] .skills-group h5,
+[data-theme="light"] .grid-label,
+[data-theme="light"] .peek-label,
+[data-theme="light"] .paper .status a,
+[data-theme="light"] .case-link,
+[data-theme="light"] .more-repos a,
+[data-theme="light"] .skill-hint,
+[data-theme="light"] .telemetry span b{ color:var(--markup); }
+[data-theme="light"] .sec-tag::before{ background:var(--markup); }
+[data-theme="light"] .hero-divider{ background:var(--markup); }
+[data-theme="light"] .case-link, [data-theme="light"] .more-repos a{ border-bottom-color:rgba(255,200,87,.45); }
+[data-theme="light"] .project-card .tag{ color:var(--markup); border-color:rgba(255,200,87,.45); background:rgba(255,200,87,.08); }
+[data-theme="light"] nav.links a.active{ color:var(--markup); }
+[data-theme="light"] .tl-item.is-current .tl-node.lit{ background:var(--markup); border-color:var(--markup); }
+[data-theme="light"] .skill-filter button[aria-pressed="true"]{ background:var(--markup); color:#1B1300; }
+
+/* drawing-sheet details on panels */
+[data-theme="light"] .glass::after{
+  opacity:1;
+  background:
+    linear-gradient(rgba(255,255,255,.75) 1px, transparent 1px) 0 0/18px 18px no-repeat,
+    linear-gradient(90deg, rgba(255,255,255,.75) 1px, transparent 1px) 0 0/18px 18px no-repeat,
+    linear-gradient(rgba(255,255,255,.75) 1px, transparent 1px) 100% 100%/18px 18px no-repeat,
+    linear-gradient(90deg, rgba(255,255,255,.75) 1px, transparent 1px) 100% 100%/18px 18px no-repeat;
+}
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .paper-clickable:hover,
+[data-theme="light"] .gallery-slot:hover{ border-color:rgba(255,255,255,.75); }
+
+/* engineering title block in the footer (blueprint only) */
+[data-theme="light"] .title-block{
+  display:grid; grid-template-columns:2.2fr repeat(5, 1fr);
+  margin-bottom:26px; border:1.5px solid rgba(255,255,255,.6); border-radius:2px;
+  background:#0B2B5A; box-shadow:0 14px 34px rgba(3,14,36,.38);
+}
+.tb-cell{ padding:10px 14px; border-left:1px solid rgba(255,255,255,.3); display:flex; flex-direction:column; gap:4px; min-width:0; }
+.tb-cell:first-child{ border-left:none; }
+.tb-cell span{ font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--markup); }
+.tb-cell b{ font-size:12.5px; font-weight:500; letter-spacing:.04em; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+@media (max-width:760px){
+  [data-theme="light"] .title-block{ grid-template-columns:1fr 1fr; }
+  .tb-cell.tb-wide{ grid-column:1 / -1; }
+  .tb-cell{ border-left:none; border-top:1px solid rgba(255,255,255,.3); }
+  .tb-cell:nth-child(2n+1):not(.tb-wide){ border-right:1px solid rgba(255,255,255,.3); }
+  .tb-cell:first-child{ border-top:none; }
+}
+@media print{ .title-block{ display:none !important; } }
