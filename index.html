@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>try{var saved=localStorage.getItem('mth-theme');var sys=(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme', saved || sys);}catch(e){}try{if(sessionStorage.getItem('mth-booted'))document.documentElement.classList.add('pl-skip');}catch(e){}</script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Cg+c+ELIvVoZaVBjdx8fzjk0X4bt/DatKT0AxGbUZt0=' 'sha256-uHY2KAqbx1rsqjXTp+s1KgL8YBzpe5OY6ICe1Eh0P0o='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Tasneemul Hassan — Robotics & Electronics Engineer</title>
+  <meta name="description" content="Portfolio of Md. Tasneemul Hassan — EEE engineer specializing in robotics, autonomous systems, and electronics." />
+  <link rel="canonical" href="https://www.bueec.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Md. Tasneemul Hassan — Robotics & Electronics Engineer" />
+  <meta property="og:description" content="EEE engineer specializing in robotics, autonomous systems, and electronics. President @ BUEEC, BRAC University '26." />
+  <meta property="og:image" content="https://www.bueec.com/images/profile.png" />
+  <meta property="og:url" content="https://www.bueec.com/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Md. Tasneemul Hassan — Robotics & Electronics Engineer" />
+  <meta name="twitter:description" content="EEE engineer specializing in robotics, autonomous systems, and electronics." />
+  <meta name="twitter:image" content="https://www.bueec.com/images/profile.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md. Tasneemul Hassan",
+    "jobTitle": "Electrical and Electronics Engineering Student",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "BRAC University" },
+    "url": "https://www.bueec.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/tasneemulhassan12/",
+      "https://github.com/Th12mugdho",
+      "https://www.facebook.com/tasneemulhassan12"
+    ]
+  }
+  </script>
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="vt.js"></script>
+</head>
+<body>
+
+<div class="scroll-rail" aria-hidden="true"><div class="scroll-rail-fill" id="scrollRailFill"></div></div>
+
+<div class="preloader" id="preloader" role="status" aria-label="Loading">
+  <div class="preloader-inner">
+    <div class="pl-stage">
+      <!-- Top-down hexacopter: line work draws itself, props spin up, then it lifts off -->
+      <svg class="pl-drone" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="pl-draw">
+          <line x1="60" y1="60" x2="98" y2="60" pathLength="1"/>
+          <line x1="60" y1="60" x2="79" y2="93" pathLength="1"/>
+          <line x1="60" y1="60" x2="41" y2="93" pathLength="1"/>
+          <line x1="60" y1="60" x2="22" y2="60" pathLength="1"/>
+          <line x1="60" y1="60" x2="41" y2="27" pathLength="1"/>
+          <line x1="60" y1="60" x2="79" y2="27" pathLength="1"/>
+          <circle cx="98" cy="60" r="13" pathLength="1"/>
+          <circle cx="79" cy="93" r="13" pathLength="1"/>
+          <circle cx="41" cy="93" r="13" pathLength="1"/>
+          <circle cx="22" cy="60" r="13" pathLength="1"/>
+          <circle cx="41" cy="27" r="13" pathLength="1"/>
+          <circle cx="79" cy="27" r="13" pathLength="1"/>
+        </g>
+        <g class="pl-blades">
+          <line class="pl-blade" x1="88" y1="60" x2="108" y2="60"/>
+          <line class="pl-blade" x1="69" y1="93" x2="89" y2="93"/>
+          <line class="pl-blade" x1="31" y1="93" x2="51" y2="93"/>
+          <line class="pl-blade" x1="12" y1="60" x2="32" y2="60"/>
+          <line class="pl-blade" x1="31" y1="27" x2="51" y2="27"/>
+          <line class="pl-blade" x1="69" y1="27" x2="89" y2="27"/>
+        </g>
+        <circle class="pl-body" cx="60" cy="60" r="11"/>
+        <circle class="pl-nose" cx="60" cy="53" r="2.4"/>
+      </svg>
+      <div class="pl-name-wrap">
+        <div class="pl-name">MD. TASNEEMUL HASSAN</div>
+        <div class="pl-subtitle mono">ELECTRICAL &amp; ELECTRONICS ENGINEER</div>
+      </div>
+    </div>
+    <div class="preloader-lines mono" id="preloaderLines">
+      <div class="pl-line" data-delay="0">ESC CALIBRATION — OK</div>
+      <div class="pl-line" data-delay="1">IMU / COMPASS — ALIGNED</div>
+      <div class="pl-line" data-delay="2">TELEMETRY LINK — ESTABLISHED</div>
+      <div class="pl-line pl-ready" data-delay="3">ARMED — TAKEOFF</div>
+    </div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderFill"></div></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="field" aria-hidden="true">
+  <div class="hud-grid"></div>
+</div>
+
+<header class="site-nav">
+  <div class="nav-capsule" id="navCapsule">
+    <a href="#home" class="logo"><span class="logo-dot"></span>MD. TASNEEMUL HASSAN</a>
+    <nav class="links" id="navLinks">
+      <span class="nav-pill" id="navPill"></span>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="switch" id="themeToggle" aria-label="Switch between dark and blueprint theme" title="Dark / Blueprint"></button>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-scrim" id="drawerScrim"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="#projects" data-drawer-nav="projects">Projects <span class="arrow">→</span></a>
+  <a href="#about" data-drawer-nav="about">About <span class="arrow">→</span></a>
+  <a href="#research" data-drawer-nav="research">Research <span class="arrow">→</span></a>
+  <a href="#experience" data-drawer-nav="experience">Experience <span class="arrow">→</span></a>
+  <a href="#contact" data-drawer-nav="contact">Contact <span class="arrow">→</span></a>
+  <a class="drawer-cta" href="#contact">Get in touch</a>
+</div>
+
+<main id="main">
+
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      
+      <div>
+        <p class="hero-cmd mono reveal" aria-hidden="true"><span class="cmd-prompt">$</span> <span class="cmd-text" id="heroCmd" data-cmd="px4-commander takeoff"></span><span class="cmd-caret"></span></p>
+        <div class="hero-badges reveal">
+          <span class="hero-badge">2 Published Papers</span>
+          <span class="hero-badge">President, BUEEC</span>
+          <span class="hero-badge">Traction Champion</span>
+        </div>
+        <p class="hero-subtitle reveal" style="transition-delay:.02s;">Md. Tasneemul Hassan · EEE, BRAC University '26</p>
+        <h1 class="reveal" style="transition-delay:.04s;">Robots that fly,<br>walk <span class="text-cyan">and learn.</span></h1>
+
+        <div class="hero-divider reveal" style="transition-delay:.06s;"></div>
+
+        <p class="lede reveal" style="transition-delay:.08s;">I'm Tasneemul, a final-year EEE student at BRAC University. I'm building Payra, an autonomous delivery hexacopter on PX4 + ROS2, and I've published at IEEE ICICT 2024 and in Elsevier's <i>Array</i>.</p>
+
+        <div class="telemetry reveal mono" style="transition-delay:.09s;">
+          <span>LOC <b>23.81°N 90.41°E — DHAKA</b></span>
+          <span>LOCAL <b id="dhakaClock">GMT+6</b></span>
+          <span>STATUS <b>OPEN TO ROLES</b></span>
+          <span>FOCUS <b>ROBOTICS / EMBEDDED / ML</b></span>
+        </div>
+
+        <div class="hero-actions reveal" style="transition-delay:.12s;">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="https://docs.google.com/document/d/1NcQrVOiAw4u9tsLOBIcrLQ7xSWuy-caizlI7XYZxr_Q/edit?usp=sharing" id="resumeBtn" target="_blank" rel="noopener">Résumé ↗</a>
+          <a class="btn btn-ghost btn-icon" href="https://www.linkedin.com/in/tasneemulhassan12/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a class="btn btn-ghost btn-icon" href="https://github.com/Th12mugdho" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg></a>
+        </div>
+
+        <p class="hero-ask reveal" style="transition-delay:.13s;">
+          <span class="pulse-dot"></span>
+          Curious about a project or paper? <a href="#" data-open-chat>Ask my AI assistant →</a>
+        </p>
+      </div>
+
+      <div class="hero-image-stage reveal-scale" id="tiltStage" style="transition-delay:.06s;">
+        <!-- Terminal log: prints after "$ px4-commander takeoff" finishes typing (mission.js) -->
+        <div class="hero-term" id="heroTerm" aria-hidden="true">
+          <div class="term-bar mono"><span class="term-led"></span>px4 · sitl log<span class="term-state" id="termState">idle</span></div>
+          <div class="term-body mono" id="termBody">
+            <p data-lvl="info"><b>INFO</b>  [commander] Ready for takeoff!</p>
+            <p data-lvl="info"><b>INFO</b>  [commander] Armed by internal command</p>
+            <p data-lvl="info"><b>INFO</b>  [commander] Takeoff detected</p>
+            <p data-lvl="info"><b>INFO</b>  [navigator] Mission: waypoint 3/3 reached</p>
+            <p data-lvl="node"><b>[payra_box]</b> Fan stabilisation active · box level</p>
+            <p data-lvl="ok"><b>[payra_box]</b> Payload lowered · no landing ✓</p>
+            <p class="term-prompt">$ <span class="term-caret"></span></p>
+          </div>
+        </div>
+        <!-- PCB scene: traces etch in, power flows into the ESP32-S3, data fans out to the photo, the frame powers on.
+             Afterwards a faint data packet runs along a bus every few seconds (paused off screen). -->
+        <svg class="hero-traces" id="heroPcb" viewBox="-100 0 640 560" aria-hidden="true">
+          <defs>
+            <radialGradient id="trFade" cx="50%" cy="55%" r="70%">
+              <stop offset="60%" stop-color="#fff"/>
+              <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="trMask" maskUnits="userSpaceOnUse" x="-100" y="0" width="640" height="560">
+              <rect x="-100" y="0" width="640" height="560" fill="url(#trFade)"/>
+            </mask>
+          </defs>
+          <g mask="url(#trMask)">
+            <g class="pcb-copper">
+              <path class="etch" d="M175 487 V476 H102 L90 464 V440" pathLength="1" style="--e:0"/>
+              <path class="etch" d="M193 487 V466 H142 L130 454 V440" pathLength="1" style="--e:1"/>
+              <path class="etch" d="M211 487 V456 H182 L170 444 V440" pathLength="1" style="--e:2"/>
+              <path class="etch" d="M229 487 V456 H258 L270 444 V440" pathLength="1" style="--e:3"/>
+              <path class="etch" d="M247 487 V466 H298 L310 454 V440" pathLength="1" style="--e:4"/>
+              <path class="etch" d="M265 487 V476 H338 L350 464 V440" pathLength="1" style="--e:5"/>
+              <path class="etch" d="M-100 530 H110 L136 504 H153" pathLength="1" style="--e:6"/>
+              <path class="etch" d="M-100 544 H120 L146 518 H153" pathLength="1" style="--e:7"/>
+              <path class="etch" d="M540 530 H330 L304 504 H287" pathLength="1" style="--e:8"/>
+              <path class="etch" d="M540 544 H320 L294 518 H287" pathLength="1" style="--e:9"/>
+              <path class="etch" d="M-100 150 H-75 L-45 180 H0" pathLength="1" style="--e:10"/>
+              <path class="etch" d="M-100 162 H-75 L-45 192 H0" pathLength="1" style="--e:11"/>
+              <path class="etch" d="M-100 174 H-75 L-45 204 H0" pathLength="1" style="--e:12"/>
+              <path class="etch" d="M-100 186 H-75 L-45 216 H0" pathLength="1" style="--e:13"/>
+              <path class="etch" d="M-100 300 H-50 L-30 280 H0" pathLength="1" style="--e:14"/>
+              <path class="etch" d="M540 330 H505 L475 300 H440" pathLength="1" style="--e:15"/>
+              <path class="etch" d="M540 342 H505 L475 312 H440" pathLength="1" style="--e:16"/>
+              <path class="etch" d="M540 354 H505 L475 324 H440" pathLength="1" style="--e:17"/>
+              <path class="etch" d="M540 150 H500 L470 180 H440" pathLength="1" style="--e:18"/>
+            </g>
+            <g class="pcb-pulse">
+              <path class="p-data" d="M175 487 V476 H102 L90 464 V440" pathLength="100" style="--d:0.55"/>
+              <path class="p-data" d="M193 487 V466 H142 L130 454 V440" pathLength="100" style="--d:0.6100000000000001"/>
+              <path class="p-data" d="M211 487 V456 H182 L170 444 V440" pathLength="100" style="--d:0.67"/>
+              <path class="p-data" d="M229 487 V456 H258 L270 444 V440" pathLength="100" style="--d:0.73"/>
+              <path class="p-data" d="M247 487 V466 H298 L310 454 V440" pathLength="100" style="--d:0.79"/>
+              <path class="p-data" d="M265 487 V476 H338 L350 464 V440" pathLength="100" style="--d:0.8500000000000001"/>
+              <path class="p-pwr" d="M-100 530 H110 L136 504 H153" pathLength="100" style="--d:0"/>
+              <path class="p-pwr" d="M-100 544 H120 L146 518 H153" pathLength="100" style="--d:0.08"/>
+              <path class="p-pwr" d="M540 530 H330 L304 504 H287" pathLength="100" style="--d:0"/>
+              <path class="p-pwr" d="M540 544 H320 L294 518 H287" pathLength="100" style="--d:0.08"/>
+              <path class="p-data" d="M-100 150 H-75 L-45 180 H0" pathLength="100" style="--d:0.6"/>
+              <path class="p-data" d="M-100 162 H-75 L-45 192 H0" pathLength="100" style="--d:0.6599999999999999"/>
+              <path class="p-data" d="M-100 174 H-75 L-45 204 H0" pathLength="100" style="--d:0.72"/>
+              <path class="p-data" d="M-100 186 H-75 L-45 216 H0" pathLength="100" style="--d:0.78"/>
+              <path class="p-data" d="M-100 300 H-50 L-30 280 H0" pathLength="100" style="--d:0.75"/>
+              <path class="p-data" d="M540 330 H505 L475 300 H440" pathLength="100" style="--d:0.62"/>
+              <path class="p-data" d="M540 342 H505 L475 312 H440" pathLength="100" style="--d:0.6799999999999999"/>
+              <path class="p-data" d="M540 354 H505 L475 324 H440" pathLength="100" style="--d:0.74"/>
+              <path class="p-data" d="M540 150 H500 L470 180 H440" pathLength="100" style="--d:0.7"/>
+            </g>
+            <g class="pcb-amb">
+              <path d="M193 487 V466 H142 L130 454 V440" pathLength="100" style="--a:0"/>
+              <path d="M247 487 V466 H298 L310 454 V440" pathLength="100" style="--a:2"/>
+              <path d="M-100 162 H-75 L-45 192 H0" pathLength="100" style="--a:1"/>
+              <path d="M540 330 H505 L475 300 H440" pathLength="100" style="--a:3"/>
+            </g>
+            <g class="pcb-vias">
+              <circle cx="-75" cy="150" r="3.2"/>
+              <circle cx="-75" cy="186" r="3.2"/>
+              <circle cx="505" cy="330" r="3.2"/>
+              <circle cx="505" cy="354" r="3.2"/>
+              <circle cx="500" cy="150" r="3.2"/>
+              <circle cx="110" cy="530" r="3.2"/>
+              <circle cx="330" cy="530" r="3.2"/>
+              <circle cx="-50" cy="300" r="3.2"/>
+            </g>
+            <g class="pcb-pads">
+              <rect x="86" y="436" width="8" height="8" rx="1.2" style="--d:4"/>
+              <rect x="126" y="436" width="8" height="8" rx="1.2" style="--d:5"/>
+              <rect x="166" y="436" width="8" height="8" rx="1.2" style="--d:6"/>
+              <rect x="266" y="436" width="8" height="8" rx="1.2" style="--d:7"/>
+              <rect x="306" y="436" width="8" height="8" rx="1.2" style="--d:8"/>
+              <rect x="346" y="436" width="8" height="8" rx="1.2" style="--d:9"/>
+              <rect x="-4" y="176" width="8" height="8" rx="1.2" style="--d:0"/>
+              <rect x="-4" y="188" width="8" height="8" rx="1.2" style="--d:1"/>
+              <rect x="-4" y="200" width="8" height="8" rx="1.2" style="--d:2"/>
+              <rect x="-4" y="212" width="8" height="8" rx="1.2" style="--d:3"/>
+              <rect x="-4" y="276" width="8" height="8" rx="1.2" style="--d:10"/>
+              <rect x="436" y="296" width="8" height="8" rx="1.2" style="--d:11"/>
+              <rect x="436" y="308" width="8" height="8" rx="1.2" style="--d:12"/>
+              <rect x="436" y="320" width="8" height="8" rx="1.2" style="--d:13"/>
+              <rect x="436" y="176" width="8" height="8" rx="1.2" style="--d:14"/>
+            </g>
+            <g class="pcb-parts">
+              <g class="cmp chip" style="--c:0"><rect class="chip-body" x="160" y="494" width="120" height="44" rx="4"/><rect class="pin" x="172" y="487" width="6" height="7"/><rect class="pin" x="190" y="487" width="6" height="7"/><rect class="pin" x="208" y="487" width="6" height="7"/><rect class="pin" x="226" y="487" width="6" height="7"/><rect class="pin" x="244" y="487" width="6" height="7"/><rect class="pin" x="262" y="487" width="6" height="7"/><rect class="pin" x="172" y="538" width="6" height="7"/><rect class="pin" x="190" y="538" width="6" height="7"/><rect class="pin" x="208" y="538" width="6" height="7"/><rect class="pin" x="226" y="538" width="6" height="7"/><rect class="pin" x="244" y="538" width="6" height="7"/><rect class="pin" x="262" y="538" width="6" height="7"/><rect class="pin" x="153" y="501" width="7" height="6"/><rect class="pin" x="153" y="515" width="7" height="6"/><rect class="pin" x="280" y="501" width="7" height="6"/><rect class="pin" x="280" y="515" width="7" height="6"/><circle class="pin1" cx="168" cy="502" r="2.2"/><text class="chip-label" x="220" y="520">ESP32-S3</text></g>
+              <g class="cmp" style="--c:1"><rect class="smd" x="-36" y="176" width="20" height="8" rx="1.5"/><rect class="smd-end" x="-36" y="176" width="4" height="8"/><rect class="smd-end" x="-20" y="176" width="4" height="8"/></g>
+              <g class="cmp" style="--c:2"><rect class="smd" x="-30" y="200" width="12" height="8" rx="1.5"/><rect class="smd-end" x="-30" y="200" width="3" height="8"/><rect class="smd-end" x="-21" y="200" width="3" height="8"/></g>
+              <g class="cmp led" style="--c:3"><rect class="smd" x="-84" y="295" width="16" height="10" rx="2"/><circle class="led-dot" cx="-76" cy="300" r="2.6"/></g>
+              <g class="cmp" style="--c:4"><rect class="xtal" x="448" y="307" width="22" height="10" rx="5"/></g>
+              <g class="cmp" style="--c:5"><rect class="smd" x="450" y="176" width="12" height="8" rx="1.5"/><rect class="smd-end" x="450" y="176" width="3" height="8"/><rect class="smd-end" x="459" y="176" width="3" height="8"/></g>
+            </g>
+            <g class="pcb-silk">
+              <text x="160" y="484">U1</text>
+              <text x="-36" y="171">R1</text>
+              <text x="-30" y="221">C1</text>
+              <text x="-84" y="290">D1 · PWR</text>
+              <text x="447" y="330">X1 40MHz</text>
+              <text x="450" y="171">C2</text>
+              <text x="-96" y="524">VCC</text>
+              <text x="536" y="524" text-anchor="end">GND</text>
+            </g>
+          </g>
+        </svg>
+        <div class="hero-tilt-container" id="tiltContainer">
+          
+          <div class="hero-wireframe"></div>
+          
+          <div class="hero-image-frame">
+            <img src="images/profile.png" alt="Md Tasneemul Hassan" width="800" height="800" class="profile-img" draggable="false">
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 01</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="tabbar" role="tablist" aria-label="Project category">
+          <button class="active" data-cat="robotics" role="tab" aria-selected="true">Robotics</button>
+          <button data-cat="electronics" role="tab" aria-selected="false">Electronics &amp; VLSI</button>
+          <button data-cat="ml" role="tab" aria-selected="false">ML &amp; Data</button>
+        </div>
+      </div>
+
+      <div class="led-legend mono" aria-label="Status key">
+        <span><i class="led led-field"></i>Built / field-tested</span>
+        <span><i class="led led-build"></i>Hardware in progress</span>
+        <span><i class="led led-sim"></i>Simulation-validated</span>
+        <span><i class="led led-course"></i>Coursework</span>
+      </div>
+
+      <div class="skill-filter mono" role="group" aria-label="Filter projects by skill">
+        <span class="sf-label">Filter:</span>
+        <button type="button" data-filter="px4 ros2" aria-pressed="false">PX4 &amp; ROS2</button>
+        <button type="button" data-filter="arduino-esp32 rpi" aria-pressed="false">Embedded</button>
+        <button type="button" data-filter="cv" aria-pressed="false">Computer vision</button>
+        <button type="button" data-filter="python" aria-pressed="false">Python</button>
+        <button type="button" data-filter="ml" aria-pressed="false">ML</button>
+        <button type="button" data-filter="vlsi" aria-pressed="false">Digital / VLSI</button>
+        <button type="button" class="sf-clear" data-filter="" hidden>Clear ✕</button>
+      </div>
+
+      <div class="project-grid" id="robotics" data-panel="robotics">
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail
+            data-skills="arduino-esp32 px4 ros2"
+            data-link="payra.html" data-link-label="Read the full case study →"
+            data-peek="Validated in Gazebo / PX4 SITL; the hexacopter frame and ESP32 delivery box are being assembled."
+            data-title="Payra — Autonomous Delivery Hexacopter"
+            data-tag="Final Year Design Project"
+            data-problem="Last-mile food and medicine delivery in Dhaka is slowed by traffic congestion and limited road access in dense neighborhoods. Payra explores a non-landing aerial delivery model — lowering the payload via a smart delivery box instead of landing — to avoid unsafe or impractical landings in crowded urban areas."
+            data-approach="Built around a Pixhawk flight controller running PX4, with an ESP32-based smart delivery box using IMU-driven active fan stabilization to keep the payload level while it's lowered. The airframe was modeled in URDF/xacro, and the full system — flight dynamics, delivery box behavior, and mission logic — was validated in Gazebo via PX4 SITL over a ROS2 pipeline, built collaboratively with a five-member team as the Final Year Design Project. A formal design report covers system specifications, requirements engineering, design constraints, and conflicting-requirement trade-off tables."
+            data-outcome="Simulation-validated in Gazebo/PX4 SITL, with physical hardware assembly (hexacopter frame, ESP32 delivery box) currently underway, alongside a completed FYDP design report covering system specifications, requirements, constraints, and trade-off analysis.">
+          <span class="ros-badge">ROS2 · PX4</span>
+          <span class="tag">Final Year Design Project</span>
+          <h3>Payra — Autonomous Delivery Hexacopter</h3>
+          <p>A hexacopter-based non-landing drone delivery system for urban food and medicine delivery in Dhaka, with an IMU-driven active fan stabilization approach for the payload box.</p>
+          <dl class="spec">
+            <div><dt>Controller</dt><dd>Pixhawk · PX4</dd></div>
+            <div><dt>Payload</dt><dd>ESP32 box, IMU fan stabilisation</dd></div>
+            <div><dt>Simulation</dt><dd><i class="led led-sim"></i>Validated in Gazebo SITL</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-build"></i>Hardware in progress</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="payra.html">Read the case study →</a>
+        </article>
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.01s;"
+            data-skills="arduino-esp32 cpp"
+            data-link="https://github.com/Th12mugdho/MechaHex" data-link-label="View on GitHub ↗"
+            data-peek="Field-tested on uneven outdoor terrain: walks, turns and avoids obstacles."
+            data-title="MechaHex — Six-Legged Hexapod"
+            data-tag="Bio-inspired locomotion"
+            data-problem="Wheeled robots struggle on uneven or unstructured terrain — a common limitation for exploration and inspection robotics. MechaHex explores a legged alternative to improve terrain adaptability."
+            data-approach="A six-legged hexapod running a bio-inspired tripod gait — three legs move together while the other three stay planted, alternating for continuous stable motion — controlled by an Arduino-based system with servo motors and ultrasonic sensors for obstacle detection, on a custom 3D-printed chassis, with custom trajectory-planning algorithms driving walking, turning, and obstacle avoidance."
+            data-outcome="A functioning hexapod capable of stable walking, turning, and obstacle avoidance, since field-tested on uneven outdoor terrain to validate the gait and obstacle-avoidance routines outside a controlled lab setting.">
+          <span class="tag">Bio-inspired locomotion</span>
+          <h3>MechaHex — Six-Legged Hexapod</h3>
+          <p>A six-legged hexapod robot navigating terrain via a tripod gait, with real-time motor coordination and trajectory planning for stable walking, turning, and obstacle avoidance.</p>
+          <dl class="spec">
+            <div><dt>Controller</dt><dd>Arduino · servo drive</dd></div>
+            <div><dt>Gait</dt><dd>Tripod, 6 legs, 3D-printed chassis</dd></div>
+            <div><dt>Sensing</dt><dd>Ultrasonic · live camera feed</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-field"></i>Field-tested outdoors</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/MechaHex" target="_blank" rel="noopener">GitHub ↗</a>
+        </article>
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.03s;"
+            data-skills="rpi python" data-short="Surveillance Node"
+            data-peek="Streams live video from a Raspberry Pi Zero 2W to a browser for remote monitoring."
+            data-title="Live Surveillance Node"
+            data-tag="Embedded vision"
+            data-desc="A compact surveillance system built on a Raspberry Pi Zero 2W with a Flask-based web app for real-time video streaming and remote monitoring — designed to run on minimal, low-cost embedded hardware rather than a full desktop or server.">
+          <span class="tag">Embedded vision</span>
+          <h3>Live Surveillance Node</h3>
+          <p>A compact surveillance system built on a Raspberry Pi Zero 2W with a Flask-based web app for real-time video streaming and remote monitoring.</p>
+          <dl class="spec">
+            <div><dt>Board</dt><dd>Raspberry Pi Zero 2W</dd></div>
+            <div><dt>Software</dt><dd>Python · Flask streaming server</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-field"></i>Built</dd></div>
+          </dl>
+        </article>
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.04s;"
+            data-skills="px4 python cv" data-short="Fusion Hexa"
+            data-link="https://github.com/Th12mugdho/hexacopter-gazebo-simulation" data-link-label="View on GitHub ↗"
+            data-peek="Locks onto an ArUco landing pad and holds position over it, in an open-source simulation."
+            data-title="Fusion Hexa — PX4 + Gazebo Hexacopter Simulation"
+            data-tag="Open-source simulation"
+            data-desc="An open-source (MIT) simulation package for a custom Hexarotor+ vehicle (PX4 airframe 7001) running PX4 SITL in Gazebo Harmonic, with a 5.575 kg first-pass flight model and six motor plugins with recorded geometry and rotation directions. It carries a gimballed 1280×720 RGB camera and a dedicated downward landing camera, detects an ArUco landing pad (marker ID 33), runs OpenCV HOG person detection and frontal-face detection (detection only, no identity recognition), and centres itself over the marker with a MAVSDK Offboard XY auto-hover controller while holding altitude. A delivery payload/winch experiment is driven from a gamepad through a low-latency Gazebo Transport bridge. Targets Ubuntu 24.04, PX4 v1.17.0 and Python 3.12.">
+          <span class="tag">Open-source simulation</span>
+          <h3>Fusion Hexa — PX4 + Gazebo Hexacopter</h3>
+          <p>A custom Hexarotor+ in PX4 SITL and Gazebo Harmonic with gimballed and downward cameras, ArUco auto-hover, human detection and a payload winch experiment.</p>
+          <dl class="spec">
+            <div><dt>Stack</dt><dd>PX4 v1.17 · Gazebo Harmonic · MAVSDK</dd></div>
+            <div><dt>Vision</dt><dd>OpenCV · ArUco pad · HOG person detection</dd></div>
+            <div><dt>Control</dt><dd>Offboard XY auto-hover · gamepad winch</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-sim"></i>Simulation · open source (MIT)</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/hexacopter-gazebo-simulation" target="_blank" rel="noopener">GitHub ↗</a>
+        </article>
+        <article class="glass project-card reveal project-clickable" tabindex="0" role="button" data-detail style="transition-delay:.05s;"
+            data-skills="python cv" data-short="Human Detection Alert"
+            data-link="https://github.com/Th12mugdho/Human_Detection" data-link-label="View on GitHub ↗"
+            data-peek="Spots a person on the webcam, captures 4 timestamped photos and emails them."
+            data-title="Human Detection Alert"
+            data-tag="Computer vision"
+            data-desc="A live webcam pipeline that detects people with OpenCV's HOG people detector. Pressing S while a person is in frame captures four timestamped photos, saves them, and emails all four as attachments through Gmail (using an app password kept in a .env file). An optional mode reuses a camera calibration from his ArUco marker project to overlay the marker's estimated distance in metres on each saved photo.">
+          <span class="tag">Computer vision</span>
+          <h3>Human Detection Alert</h3>
+          <p>Live webcam person detection with OpenCV that captures timestamped photos on demand and emails them, with an optional ArUco distance overlay.</p>
+          <dl class="spec">
+            <div><dt>Detection</dt><dd>OpenCV HOG people detector</dd></div>
+            <div><dt>Output</dt><dd>4 timestamped photos → Gmail alert</dd></div>
+            <div><dt>Extra</dt><dd>ArUco distance from camera calibration</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-field"></i>Built</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/Human_Detection" target="_blank" rel="noopener">GitHub ↗</a>
+        </article>
+      </div>
+
+      <div class="project-grid" id="electronics" data-panel="electronics" style="display:none;">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-peek="Interactive Bode plots show how component values shift the frequency response."
+            data-title="Active Filter Design Suite"
+            data-tag="Analog design"
+            data-desc="For EEE308 (Electronic Circuits II): transfer function derivation, Bode plot analysis, and active filter design using Multiple Feedback (MFB) and Twin-T topologies, visualized with interactive Chart.js tooling to explore how component values shift the frequency response.">
+          <span class="tag">Analog design</span>
+          <h3>Active Filter Design Suite</h3>
+          <p>Transfer function derivation, Bode plot analysis, and active filter design using Multiple Feedback (MFB) and Twin-T topologies, visualized with interactive Chart.js tooling.</p>
+          <dl class="spec">
+            <div><dt>Topologies</dt><dd>MFB · Twin-T</dd></div>
+            <div><dt>Analysis</dt><dd>Bode plots · Chart.js</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-course"></i>Coursework · EEE308</dd></div>
+          </dl>
+        </article>
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-skills="vlsi" data-short="CMOS study"
+            data-peek="Sized pull-up and pull-down networks using Elmore delay models."
+            data-title="CMOS Delay &amp; Sizing Study"
+            data-tag="VLSI"
+            data-desc="Elmore delay modeling and transistor sizing across pull-up/pull-down networks for CMOS digital logic, paired with Boolean minimization via Karnaugh maps to simplify the underlying logic before sizing.">
+          <span class="tag">VLSI</span>
+          <h3>CMOS Delay &amp; Sizing Study</h3>
+          <p>Elmore delay modeling and transistor sizing across pull-up/pull-down networks, paired with Boolean minimization via Karnaugh maps for digital logic design.</p>
+          <dl class="spec">
+            <div><dt>Method</dt><dd>Elmore delay · PUN/PDN sizing</dd></div>
+            <div><dt>Logic</dt><dd>K-map minimisation</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-course"></i>Coursework</dd></div>
+          </dl>
+        </article>
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-skills="vlsi" data-short="Digital alarm clock"
+            data-link="https://github.com/Th12mugdho/digital-alarm-clock" data-link-label="View on GitHub ↗"
+            data-peek="RTL, testbench, timing constraints and synthesis scripts in one repository."
+            data-title="Digital Alarm Clock — SystemVerilog RTL"
+            data-tag="Digital design"
+            data-desc="A digital alarm clock designed in SystemVerilog at register-transfer level, with PWM output signal generation. The repository includes the RTL design, a testbench, timing constraints and synthesis scripts, with a written report.">
+          <span class="tag">Digital design</span>
+          <h3>Digital Alarm Clock — SystemVerilog RTL</h3>
+          <p>An RTL alarm clock with PWM output generation, with its testbench, timing constraints and synthesis scripts.</p>
+          <dl class="spec">
+            <div><dt>Language</dt><dd>SystemVerilog (RTL)</dd></div>
+            <div><dt>Includes</dt><dd>Testbench · timing constraints · synthesis scripts</dd></div>
+            <div><dt>Output</dt><dd>PWM signal generation</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/digital-alarm-clock" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="case-link mono js-stop-propagation" href="https://docs.google.com/document/d/1EDxlx_T1wK4glvNzCT0nx1Dx_QbNYG0nag8n34Oq7nU/edit?usp=sharing" target="_blank" rel="noopener">Report ↗</a>
+        </article>
+      </div>
+
+      <div class="project-grid" id="ml" data-panel="ml" style="display:none;">
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-skills="ml python" data-short="GNN-BERT music model"
+            data-link="https://github.com/Th12mugdho/gnn-bert-music-context" data-link-label="View on GitHub ↗"
+            data-peek="Fuses audio graphs and BERT text with cross-attention for tagging, genre and retrieval."
+            data-title="GNN-BERT for Music Context Understanding"
+            data-tag="Multimodal deep learning"
+            data-desc="A hybrid BERT + Graph Neural Network system for music context understanding, built for a supervised neural network course (CSE425 / EEE474 / CSE715). Audio is turned into 320-dimensional segment features (log-mel, MFCC and chroma statistics) that form the nodes of a graph, with edges from temporal adjacency and cosine similarity. A fine-tuned BERT encodes track metadata from the FMA dataset, deliberately excluding the genre label so it can't leak into the text channel. The two are fused with cross-attention, using the graph readout as the query over the BERT tokens, and trained for multi-label tagging and genre classification, with optional valence/arousal emotion regression and cross-modal retrieval. The pipeline uses a leakage-free split grouped by track and stratified by genre.">
+          <span class="tag">Multimodal deep learning</span>
+          <h3>GNN-BERT for Music Context</h3>
+          <p>Audio segments as a graph, track metadata through BERT, fused with cross-attention for multi-label tagging, genre classification and retrieval.</p>
+          <dl class="spec">
+            <div><dt>Model</dt><dd>GNN (PyTorch Geometric) + BERT · cross-attention</dd></div>
+            <div><dt>Data</dt><dd>FMA audio + metadata, leakage-free split</dd></div>
+            <div><dt>Tasks</dt><dd>Tagging · genre · emotion · retrieval</dd></div>
+            <div><dt>Status</dt><dd><i class="led led-course"></i>Course project · CSE425/EEE474</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/gnn-bert-music-context" target="_blank" rel="noopener">GitHub ↗</a>
+        </article>
+        <article class="glass project-card project-clickable" tabindex="0" role="button" data-detail
+            data-skills="ml python" data-short="Telco churn analysis"
+            data-link="https://github.com/Th12mugdho/telco-churn-prediction-analysis" data-link-label="View on GitHub ↗"
+            data-peek="Compares KNN, logistic regression and a neural network, plus K-Means customer segments."
+            data-title="Telco Customer Churn Prediction"
+            data-tag="Machine learning"
+            data-desc="Churn prediction and customer segmentation on the Telco Customer Churn dataset, comparing K-Nearest Neighbours, Logistic Regression and a Neural Network for prediction, and using K-Means clustering to segment customers. A written report accompanies the code.">
+          <span class="tag">Machine learning</span>
+          <h3>Telco Customer Churn Prediction</h3>
+          <p>Predicting which customers will leave, and segmenting them, using classical ML and a neural network on the Telco Customer Churn dataset.</p>
+          <dl class="spec">
+            <div><dt>Models</dt><dd>KNN · Logistic Regression · Neural Network</dd></div>
+            <div><dt>Segmentation</dt><dd>K-Means clustering</dd></div>
+            <div><dt>Data</dt><dd>Telco Customer Churn dataset</dd></div>
+          </dl>
+          <a class="case-link mono js-stop-propagation" href="https://github.com/Th12mugdho/telco-churn-prediction-analysis" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="case-link mono js-stop-propagation" href="https://docs.google.com/document/d/1DpyKp9SMaN_XDW5mcz6EOyvcurPO5DaLbexZdizmIUs/edit?usp=sharing" target="_blank" rel="noopener">Report ↗</a>
+        </article>
+      </div>
+
+      <p class="more-repos mono reveal"><a href="https://github.com/Th12mugdho?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub ↗</a></p>
+
+      <div class="stat-grid stat-strip reveal">
+        <div class="glass stat-card readout"><b data-count="10" data-suffix="+">0</b><span>Projects built</span></div>
+        <div class="glass stat-card readout"><b data-count="2">0</b><span>Published papers</span></div>
+        <div class="glass stat-card readout"><b data-count="3" data-suffix="+ yrs">0</b><span>Club leadership</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 02</span>
+          <h2>About Me</h2>
+        </div>
+      </div>
+      <div class="about-grid" style="display: flex; justify-content: center; margin: 0 auto;">
+        <div class="glass about-card reveal">
+          <p style="color:var(--muted); font-size:15.5px;">I'm <b style="color:var(--text);">Md Tasneemul Hassan</b>, a final-year EEE student at BRAC University. Most of what I build sits where hardware meets intelligence: a drone that has to keep its payload level, a hexapod that has to walk on uneven ground, and neural networks that learn without backpropagation and could run on low-power hardware.</p>
+          <p style="color:var(--muted); font-size:15.5px; margin-top:14px;">Right now that means <b style="color:var(--text);">Payra</b>, the delivery hexacopter my five-person capstone team is building to lower parcels into Dhaka's crowded streets instead of landing, and my second paper, on lightweight super-resolution for rendered images, is now published in Elsevier's <i>Array</i>. Outside the lab I lead the <b style="color:var(--text);">BRAC University Electrical and Electronic Club (BUEEC)</b> as President, running workshops on embedded systems and ML. After graduating in 2026, I'm looking for robotics, embedded or research-engineering roles.</p>
+          
+          <span class="sub-label mono">/ Toolchain</span>
+          <div class="toolchain">
+            <span class="skill-band"><span class="dot"></span>C++</span>
+            <span class="skill-band"><span class="dot"></span>Python / NumPy</span>
+            <span class="skill-band"><span class="dot"></span>ROS2 · Gazebo</span>
+            <span class="skill-band"><span class="dot"></span>PX4 Autopilot</span>
+            <span class="skill-band"><span class="dot"></span>Arduino / ESP32</span>
+            <span class="skill-band"><span class="dot"></span>SPICE / PCB Design</span>
+            <span class="skill-band"><span class="dot"></span>Machine Learning</span>
+          </div>
+
+          <details class="m-collapse skills-more" open>
+          <summary class="sub-label mono">/ Skills Matrix <span class="sub-hint">— click a skill to see where it's used</span><span class="mc-closed mc-tap">Show ▾</span></summary>
+          <div class="skills-matrix">
+            <div class="skills-group">
+              <h5>Embedded &amp; Firmware</h5>
+              <ul>
+                <li data-skill="arduino-esp32"><span>Arduino / ESP32</span><em>Applied in projects</em></li>
+                <li data-skill="px4"><span>Pixhawk / PX4</span><em>Applied in projects</em></li>
+                <li data-skill="rpi"><span>Raspberry Pi</span><em>Applied in projects</em></li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h5>Simulation &amp; Hardware Design</h5>
+              <ul>
+                <li data-skill="ros2"><span>ROS2 / Gazebo</span><em>Applied in projects</em></li>
+                <li><span>SPICE / PCB Design</span><em>Coursework &amp; labs</em></li>
+                <li data-skill="vlsi"><span>CMOS / VLSI</span><em>Coursework &amp; labs</em></li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h5>Software &amp; ML</h5>
+              <ul>
+                <li data-skill="cpp"><span>C++</span><em>Applied in projects</em></li>
+                <li data-skill="python"><span>Python / NumPy</span><em>Applied in projects</em></li>
+                <li data-skill="ml"><span>Machine Learning</span><em>Applied in research</em></li>
+              </ul>
+            </div>
+          </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 03</span>
+          <h2>Research</h2>
+        </div>
+        <span class="section-count">2 total</span>
+      </div>
+
+      <div class="glass paper reveal paper-clickable" tabindex="0" role="button" data-detail data-skills="ml" data-short="G-Buffer SR paper" data-title="G-Buffer-Guided Feature Modulation for Lightweight Rendered Image Super-Resolution" data-desc="Published open access in Array (Elsevier), Volume 32, December 2026, article 101324, co-authored with Md. Shahariar Hossain and Amirul Islam. Super-resolving rendered frames is a practical way to cut shading cost in real-time graphics. This paper proposes a dual-image guided framework that uses auxiliary G-buffer data (albedo) alongside the low-resolution color buffer, and compares convolution, attention, and FiLM-based designs. The large FiLM modulation model (FGSR-L) achieves the highest mean PSNR/SSIM across the three tested scales and beats SwinIR by 1.82 dB at ×4. An 11,000-pair RGB-albedo dataset is released with the paper." data-link="https://www.sciencedirect.com/science/article/pii/S2590005626006478" data-link-label="View on ScienceDirect ↗">
+        <span class="paper-index mono">01</span>
+        <div>
+          <h3>G-Buffer-Guided Feature Modulation for Lightweight Rendered Image Super-Resolution</h3>
+          <div class="venue">Array (Elsevier) · Vol. 32, Article 101324 · December 2026 · Open access</div>
+          <p class="abstract">A dual-image guided super-resolution framework for rendered frames that uses G-buffer albedo to guide upscaling. The FiLM-based FGSR-L model beats SwinIR by 1.82 dB at ×4, and an 11,000-pair RGB-albedo dataset is released.</p>
+        </div>
+        <div class="status">Published<br><a href="https://www.sciencedirect.com/science/article/pii/S2590005626006478" target="_blank" rel="noopener" class="js-stop-propagation">ScienceDirect ↗</a></div>
+      </div>
+
+      <!-- Before/after super-resolution slider. Stays hidden until both images are set:
+           put the low-res input and the FGSR-L output (same size, same crop) in images/
+           and fill in data-before / data-after below. -->
+      <figure class="glass ba-figure reveal" id="srCompare" hidden
+          data-before=""
+          data-after=""
+          data-before-label="Low-res input"
+          data-after-label="FGSR-L output">
+        <div class="ba-stage"></div>
+        <figcaption class="mono">Drag to compare · figure from Hossain, Hassan &amp; Islam, <i>Array</i> 32 (2026) 101324, open access</figcaption>
+      </figure>
+
+      <div class="glass paper reveal paper-clickable" tabindex="0" role="button" data-detail data-skills="ml" data-short="Biceptron paper" data-title="Biologically Inspired Network Design to Train Only Through Forward Pass" data-desc="Published at the 2024 IEEE 2nd International Conference on Information and Communication Technology (ICICT), Dhaka. This paper introduces the Biceptron, a neural architecture that integrates Hebbian learning and brain-criticality theory with a custom Connection Adjustment module and binary activation function — enabling networks to train without backpropagation. The approach targets the same hardware-and-intelligence intersection that runs through Tasneemul's robotics work, exploring more biologically plausible and potentially lower-power learning rules." data-link="https://ieeexplore.ieee.org/document/10839663" data-link-label="View on IEEE Xplore ↗" style="transition-delay:.02s;">
+        <span class="paper-index mono">02</span>
+        <div>
+          <h3>Biologically Inspired Network Design to Train Only Through Forward Pass</h3>
+          <div class="venue">2024 IEEE 2nd International Conference on Information and Communication Technology (ICICT) · Dhaka</div>
+          <p class="abstract">Introduces the Biceptron, integrating Hebbian learning and brain-criticality theory with a custom Connection Adjustment module and binary activation function to train networks without backpropagation.</p>
+        </div>
+        <div class="status">Published<br><a href="https://ieeexplore.ieee.org/document/10839663" target="_blank" rel="noopener" class="js-stop-propagation">IEEE Xplore ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 04</span>
+          <h2>Experience</h2>
+        </div>
+        <span class="section-count">4 total</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item is-current reveal">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="glass tl-card">
+            <div class="tl-date mono">Feb 2026 — Present</div>
+            <h3>President</h3>
+            <div class="venue">BRAC University Electrical and Electronic Club · previously Assistant Director, R&amp;D</div>
+            <details class="m-collapse tl-more" open><summary class="mono"><span class="mc-closed">Show details ▾</span><span class="mc-open">Hide details ▴</span></summary>
+            <ul class="abstract">
+              <li>Directed research initiatives and led cross-functional teams in technology driven projects.</li>
+              <li>Spearheaded the club’s involvement in major campus events, including managing logistics for the BSRM School of Engineering inauguration ceremony 2025.</li>
+              <li>Led planning and execution of technical workshops on embedded systems and machine learning, fostering hands-on skills among students.</li>
+              <li>Directed the comprehensive planning, scheduling, and execution of Spectra 3.0, managing everything from sponsorship acquisition and rulebook creation to judging multiple technical segments.</li>
+              <li>Orchestrated the "Intra EEE Football Tournament 2026" to foster community spirit and teamwork, overseeing event logistics, team registrations, and on ground coordination for club members.</li>
+            </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" style="transition-delay:.02s;">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="glass tl-card">
+            <div class="tl-date mono">Dec 2024 — Dec 2025</div>
+            <h3>Director of Event Management</h3>
+            <div class="venue">BRAC University Natural Sciences Club</div>
+            <details class="m-collapse tl-more" open><summary class="mono"><span class="mc-closed">Show details ▾</span><span class="mc-open">Hide details ▴</span></summary>
+            <ul class="abstract">
+              <li>Organized and led major science outreach programs, including the "Sunshine &amp; Strength: Vitamin D Awareness Drive," impacting over 200 students.</li>
+              <li>Boosted club engagement by 30% through innovative event planning and partnerships with industry collaborators.</li>
+              <li>Oversaw sponsorship acquisition and strategic communication initiatives to enrich the club’s activities and outreach.</li>
+            </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" style="transition-delay:.04s;">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="glass tl-card">
+            <div class="tl-date mono">Oct 2022 — Feb 2026</div>
+            <h3>Apprentice of Research and Project Management</h3>
+            <div class="venue">Robotics Club of BRAC University</div>
+            <details class="m-collapse tl-more" open><summary class="mono"><span class="mc-closed">Show details ▾</span><span class="mc-open">Hide details ▴</span></summary>
+            <ul class="abstract">
+              <li>Collaborated on national-level robotics projects, applying interdisciplinary engineering solutions.</li>
+              <li>Organized 'Traction 2025', a national robotics competition featuring hackathons and idea generation challenges.</li>
+            </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" style="transition-delay:.06s;">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="glass tl-card">
+            <div class="tl-date mono">May 2023 — Sep 2023</div>
+            <h3>The Duke of Edinburgh’s Award – Bronze Standard Awardee</h3>
+            <div class="venue">Dhaka, Bangladesh</div>
+            <details class="m-collapse tl-more" open><summary class="mono"><span class="mc-closed">Show details ▾</span><span class="mc-open">Hide details ▴</span></summary>
+            <ul class="abstract">
+              <li>Completed all four components: Voluntary Service, Physical Recreation, Skills Development, and Adventurous Journey.</li>
+              <li>Managed a local library project, physical training, and developed photography skills through active practice.</li>
+              <li>Demonstrated perseverance, leadership, and time management under structured mentorship.</li>
+            </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 05</span>
+          <h2>Achievements</h2>
+        </div>
+      </div>
+      <div class="ach-grid">
+        <div class="glass ach-col reveal">
+          <h4>Academic Honors</h4>
+          <div class="ach-item"><b>1st Runner-up</b><span>National-level technical competition</span></div>
+          <div class="ach-item"><b>Champion</b><span>Traction — national robotics competition</span></div>
+          <div class="ach-item"><b>Champion</b><span>Departmental technical challenge</span></div>
+          <div class="ach-item"><b>Finalist</b><span>National High School Programming Contest (7th rank)</span></div>
+        </div>
+        <div class="glass ach-col reveal" style="transition-delay:.02s;">
+          <h4>Co-curricular</h4>
+          <div class="ach-item"><b>Bronze Standard Awardee</b><span>The Duke of Edinburgh's International Award</span></div>
+          <div class="ach-item"><b>Editor-in-Chief</b><span>Tigers Cricket — digital sports desk</span></div>
+          <div class="ach-item"><b>MUN Delegate</b><span>Represented Sudan (WHO) &amp; Uganda (UNICEF)</span></div>        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials: hidden until real quotes are in. Delete these comment markers to bring the section back.
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 0X</span>
+          <h2>Testimonials</h2>
+        </div>
+        <span class="section-count">Placeholder — swap in real quotes</span>
+      </div>
+      <div class="testimonial-grid">
+        <div class="glass testimonial-card pending reveal">
+          <span class="pending-tag mono">Pending</span>
+          <p class="testimonial-quote">"[Add a short quote here from a professor, mentor, or research collaborator — a sentence or two on working with Tasneemul is plenty.]"</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar mono">?</span>
+            <div>
+              <b>Name, Title</b>
+              <span>Affiliation</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass testimonial-card pending reveal" style="transition-delay:.02s;">
+          <span class="pending-tag mono">Pending</span>
+          <p class="testimonial-quote">"[Add a short quote here — from a BUEEC club member, teammate on Payra, or a workshop attendee works well too.]"</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar mono">?</span>
+            <div>
+              <b>Name, Title</b>
+              <span>Affiliation</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass testimonial-card pending reveal" style="transition-delay:.04s;">
+          <span class="pending-tag mono">Pending</span>
+          <p class="testimonial-quote">"[A third quote rounds this section out nicely — even a LinkedIn recommendation you already have can be repurposed here.]"</p>
+          <div class="testimonial-person">
+            <span class="testimonial-avatar mono">?</span>
+            <div>
+              <b>Name, Title</b>
+              <span>Affiliation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="sec-tag">Section 06</span>
+          <h2>Moments &amp; Milestones</h2>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="glass gallery-slot reveal" 
+            tabindex="0" 
+            role="button" 
+            data-gallery 
+            data-img="images/bueec-presidency.jpg"
+            data-title="President, BUEEC" 
+            data-desc="Promoted to President of the BRAC University Electrical and Electronic Club (BUEEC), leading the executive team to inspire members and drive technological innovation within the community." 
+            style="transition-delay:.08s;">
+          BUEEC<br>Presidency
+        </div>
+        <div class="glass gallery-slot reveal" 
+            tabindex="0" 
+            role="button" 
+            data-gallery 
+            data-img="images/impulse-mentor.avif"
+            data-title="Co-Founder & Mentor, IMPULSE Initiative" 
+            data-desc="Co-founded and mentored BUEEC's IMPULSE initiative while speaking at its inaugural session, guiding students on leveraging AI and SDGs for impactful innovations in health tech, smart energy, and AgriTech." 
+            style="transition-delay:.12s;">
+          IMPULSE Co-Founder<br>& Mentor
+        </div>
+        <!-- Photo pending: add data-img="images/your-photo.jpg" and move out of this comment to show it.
+        <div class="glass gallery-slot reveal" tabindex="0" role="button" data-gallery data-title="BUEEC Leadership" data-desc="The BRAC University Electrical and Electronics Club team — where Tasneemul serves as President, directing research initiatives and cross-functional projects." style="transition-delay:.02s;">BUEEC team<br>portrait</div>
+        <div class="glass gallery-slot reveal" tabindex="0" role="button" data-gallery data-title="Payra — Build Phase" data-desc="Assembling the Pixhawk-controlled hexacopter frame and ESP32 smart delivery box for Payra, the Final Year Design Project autonomous delivery drone." style="transition-delay:.03s;">Payra build<br>in progress</div>
+        -->
+        <div class="glass gallery-slot reveal" 
+            tabindex="0" 
+            role="button" 
+            data-gallery 
+            data-img="images/icict-2024.jpg"
+            data-title="IEEE ICICT 2024" 
+            data-desc="Presenting 'Biologically Inspired Network Design to Train Only Through Forward Pass' at the IEEE ICICT 2024 conference in Dhaka." 
+            style="transition-delay:.04s;">
+          Conference<br>presentation
+        </div>
+        <!-- Photo pending (same as above).
+        <div class="glass gallery-slot reveal" tabindex="0" role="button" data-gallery data-title="MechaHex — Field Test" data-desc="Testing the tripod gait and obstacle-avoidance routines of MechaHex, the six-legged hexapod robot, on uneven outdoor terrain." style="transition-delay:.05s;">MechaHex<br>field test</div>
+        <div class="glass gallery-slot reveal" tabindex="0" role="button" data-gallery data-title="Lab Bench Session" data-desc="Debugging active filter circuits and Bode-plot measurements as part of coursework in Electronic Circuits II." style="transition-delay:.06s;">Lab bench<br>session</div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="glass contact-panel reveal">
+        <div>
+          <span class="sec-tag">Section 07</span>
+          <h2 style="margin-top:14px; font-size:32px;">Let's build something.</h2>
+          <p style="color:var(--muted); margin-top:14px; max-width:44ch;">Open to robotics, embedded systems, and research-engineering roles. Reach out directly or find me on the networks below.</p>
+        </div>
+        <div class="contact-links">
+          <div class="email-row">
+            <a href="mailto:tasneemulhassan12@gmail.com" class="contact-email">tasneemulhassan12@gmail.com <span class="arrow">→</span></a>
+            <button type="button" class="copy-email mono" data-copy="tasneemulhassan12@gmail.com" aria-label="Copy email address">Copy</button>
+          </div>
+          <a href="https://docs.google.com/document/d/1NcQrVOiAw4u9tsLOBIcrLQ7xSWuy-caizlI7XYZxr_Q/edit?usp=sharing" target="_blank" rel="noopener">Résumé <span class="arrow">→</span></a>
+          <a href="https://www.linkedin.com/in/tasneemulhassan12/" target="_blank" rel="noopener">LinkedIn <span class="arrow">→</span></a>
+          <a href="https://github.com/Th12mugdho" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+          <a href="https://www.facebook.com/tasneemulhassan12" target="_blank" rel="noopener">Facebook <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Copyright © 2026 Md. Tasneemul Hassan. All rights reserved.</span>
+    <span>Dhaka, Bangladesh</span>
+  </div>
+</footer>
+
+<button class="chat-toggle" id="chatToggle" aria-label="Open AI assistant (shortcut: /)" aria-keyshortcuts="/" title="Ask the AI assistant (press /)" aria-expanded="false">✦<kbd class="kbd-hint" aria-hidden="true">/</kbd></button>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+<div class="chat-panel glass" id="chatPanel" role="dialog" aria-label="Portfolio assistant">
+  <div class="chat-head">
+    <b><span class="pulse"></span>ASK.TH <span class="chat-mode mono" id="chatMode">AI · Claude</span></b>
+    <div class="chat-head-actions">
+      <button class="chat-reset" id="chatReset" aria-label="Start a new conversation" title="New conversation">↺</button>
+      <button class="chat-close" id="chatClose" aria-label="Close assistant">✕</button>
+    </div>
+  </div>
+  <div class="chat-body" id="chatBody" aria-live="polite">
+    <div class="chat-msg bot"><p>Hi! I'm ASK.TH, an AI assistant that knows Tasneemul's work. Ask me about his projects, research or experience, or ask me to explain the tech behind them.</p></div>
+    <div class="chat-suggestions">
+      <button type="button" class="chat-chip" data-question="What is Payra, and what was hard about it?">What is Payra?</button>
+      <button type="button" class="chat-chip" data-question="Explain his super-resolution paper in simple terms.">Explain his SR paper</button>
+      <button type="button" class="chat-chip" data-question="Is he a good fit for an embedded systems role?">Fit for embedded roles?</button>
+      <button type="button" class="chat-chip" data-question="How can I contact him?">Contact info</button>
+    </div>
+  </div>
+  <div class="chat-foot">
+    <form class="chat-form" id="chatForm">
+      <input class="chat-input" id="chatInput" placeholder="Ask anything about his work…" autocomplete="off" maxlength="800" aria-label="Your question" />
+      <button class="chat-send" id="chatSend" type="submit" aria-label="Send">➤</button>
+    </form>  </div>
+</div>
+
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+  <div class="gallery-modal-scrim" id="galleryModalScrim"></div>
+  <div class="gallery-modal-panel glass" role="dialog" aria-modal="true" aria-label="Milestone detail">
+    <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close">✕</button>
+    <div class="gallery-modal-media" id="galleryModalMedia"></div>
+    <div class="gallery-modal-body">
+      <span class="sec-tag" id="galleryModalTag">Milestone</span>
+      <h3 id="galleryModalTitle"></h3>
+      <p id="galleryModalDesc"></p>
+      <div class="modal-sections" id="galleryModalSections"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+<script src="plotter.js"></script>
+<script src="mission.js"></script>
+<script src="knowledge.js"></script>
+<script src="rag.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

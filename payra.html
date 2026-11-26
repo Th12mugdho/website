@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>try{var saved=localStorage.getItem('mth-theme');var sys=(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme', saved || sys);}catch(e){}try{if(sessionStorage.getItem('mth-booted'))document.documentElement.classList.add('pl-skip');}catch(e){}</script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Cg+c+ELIvVoZaVBjdx8fzjk0X4bt/DatKT0AxGbUZt0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payra — Autonomous Delivery Hexacopter · Md. Tasneemul Hassan</title>
+  <meta name="description" content="Case study: Payra, a non-landing delivery hexacopter for Dhaka built on Pixhawk/PX4 and ROS2, with an ESP32 smart delivery box using IMU-driven fan stabilisation." />
+  <link rel="canonical" href="https://www.bueec.com/payra.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Payra — Autonomous Delivery Hexacopter" />
+  <meta property="og:description" content="A non-landing delivery hexacopter for Dhaka on Pixhawk/PX4 + ROS2, validated in Gazebo SITL." />
+  <meta property="og:image" content="https://www.bueec.com/images/profile.png" />
+  <meta property="og:url" content="https://www.bueec.com/payra.html" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="vt.js"></script>
+</head>
+<body class="case-page">
+
+<div class="scroll-rail" aria-hidden="true"><div class="scroll-rail-fill" id="scrollRailFill"></div></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="field" aria-hidden="true"><div class="hud-grid"></div></div>
+
+<header class="site-nav">
+  <div class="nav-capsule scrolled">
+    <a href="index.html#projects" class="logo"><span class="logo-dot"></span>← Back to portfolio</a>
+    <div class="nav-actions">
+      <button class="switch" id="themeToggle" aria-label="Switch between dark and blueprint theme" title="Dark / Blueprint"></button>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="case-hero">
+    <div class="wrap">
+      <span class="sec-tag reveal">Case study · Final Year Design Project</span>
+      <h1 class="reveal">Payra</h1>
+      <p class="case-lede reveal">An autonomous hexacopter that delivers food and medicine in Dhaka <em>without landing</em>. It lowers a self-stabilising delivery box instead of touching down in crowded streets.</p>
+      <div class="case-status mono reveal">
+        <span><i class="led led-sim"></i>Validated in Gazebo / PX4 SITL</span>
+        <span><i class="led led-build"></i>Hardware assembly in progress</span>
+        <span><i class="led led-course"></i>Five-member team · BRAC University</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div class="section-head reveal"><div><span class="sec-tag">01</span><h2>Problem</h2></div></div>
+      <div class="case-body reveal">
+        <p>Last-mile food and medicine delivery in Dhaka is slowed by traffic congestion and limited road access in dense neighbourhoods. Drones can skip the traffic, but landing one in a crowded street is often unsafe or simply impossible.</p>
+        <p>Payra explores a <b>non-landing</b> delivery model: the drone holds position overhead and lowers the payload in a smart delivery box, so it never has to touch down.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><span class="sec-tag">02</span><h2>System architecture</h2></div></div>
+      <figure class="glass diagram-figure reveal">
+        <div class="diagram-scroll">
+          <svg class="diagram" viewBox="0 0 880 420" role="img" aria-labelledby="dgTitle dgDesc">
+            <title id="dgTitle">Payra system architecture</title>
+            <desc id="dgDesc">Mission logic running as ROS2 nodes sends mission commands to a Pixhawk flight controller running PX4, which drives the six-rotor hexacopter airframe. The airframe lowers a smart delivery box without landing. Inside the box, an IMU feeds an ESP32 controller that drives stabilising fans. The whole system is validated in Gazebo using PX4 software-in-the-loop over ROS2 with a URDF/xacro airframe model.</desc>
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" class="dg-arrowhead"/>
+              </marker>
+            </defs>
+
+            <!-- validation boundary -->
+            <rect x="16" y="16" width="848" height="388" rx="10" class="dg-zone"/>
+            <text x="36" y="44" class="dg-zone-label">SIMULATION &amp; VALIDATION — ROS2 · GAZEBO · PX4 SITL · URDF/XACRO AIRFRAME MODEL</text>
+
+            <!-- flight subsystem -->
+            <text x="40" y="84" class="dg-group-label">FLIGHT</text>
+            <rect x="40" y="96" width="210" height="76" rx="6" class="dg-box"/>
+            <text x="145" y="128" class="dg-title">Mission logic</text>
+            <text x="145" y="150" class="dg-sub">ROS2 nodes</text>
+
+            <rect x="335" y="96" width="210" height="76" rx="6" class="dg-box dg-box-key"/>
+            <text x="440" y="128" class="dg-title">Flight controller</text>
+            <text x="440" y="150" class="dg-sub">Pixhawk · PX4</text>
+
+            <rect x="630" y="96" width="210" height="76" rx="6" class="dg-box"/>
+            <text x="735" y="128" class="dg-title">Hexacopter airframe</text>
+            <text x="735" y="150" class="dg-sub">6 rotors</text>
+
+            <line x1="250" y1="134" x2="331" y2="134" class="dg-line" marker-end="url(#arr)"/>
+            <text x="290" y="124" class="dg-edge">mission</text>
+            <line x1="545" y1="134" x2="626" y2="134" class="dg-line" marker-end="url(#arr)"/>
+            <text x="585" y="124" class="dg-edge">motors</text>
+
+            <!-- non-landing handoff -->
+            <line x1="735" y1="172" x2="735" y2="262" class="dg-line dg-dashed" marker-end="url(#arr)"/>
+            <text x="747" y="214" class="dg-edge dg-edge-l">lowers payload</text>
+            <text x="747" y="230" class="dg-edge dg-edge-l">(no landing)</text>
+
+            <!-- delivery box subsystem -->
+            <rect x="140" y="266" width="704" height="118" rx="8" class="dg-subzone"/>
+            <text x="156" y="290" class="dg-group-label">SMART DELIVERY BOX</text>
+
+            <rect x="170" y="302" width="170" height="64" rx="6" class="dg-box"/>
+            <text x="255" y="330" class="dg-title">IMU</text>
+            <text x="255" y="350" class="dg-sub">box attitude</text>
+
+            <rect x="410" y="302" width="170" height="64" rx="6" class="dg-box dg-box-key"/>
+            <text x="495" y="330" class="dg-title">ESP32</text>
+            <text x="495" y="350" class="dg-sub">stabilisation control</text>
+
+            <rect x="650" y="302" width="170" height="64" rx="6" class="dg-box"/>
+            <text x="735" y="330" class="dg-title">Stabilising fans</text>
+            <text x="735" y="350" class="dg-sub">keep payload level</text>
+
+            <line x1="340" y1="334" x2="406" y2="334" class="dg-line" marker-end="url(#arr)"/>
+            <line x1="580" y1="334" x2="646" y2="334" class="dg-line" marker-end="url(#arr)"/>
+
+            <!-- Signal pulses: each packet hands off to the next link, so data visibly propagates
+                 mission → flight controller → motors, and IMU → ESP32 → fans. Paused off-screen by case.js. -->
+            <g class="dg-pulses" aria-hidden="true">
+              <circle r="4" class="dg-pulse">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M250 134 H327" keyPoints="0;1;1" keyTimes="0;.3;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="2.4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.04;.27;.31;1"/>
+              </circle>
+              <circle r="4" class="dg-pulse">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M545 134 H622" keyPoints="0;0;1;1" keyTimes="0;.33;.63;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="2.4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.33;.37;.6;.64;1"/>
+              </circle>
+              <circle r="4" class="dg-pulse dg-pulse-payload">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M735 172 V258" keyPoints="0;0;1;1" keyTimes="0;.66;.96;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="2.4s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;.66;.7;.93;.97"/>
+              </circle>
+              <circle r="4" class="dg-pulse">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M340 334 H402" keyPoints="0;1;1" keyTimes="0;.3;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="2.4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.04;.27;.31;1"/>
+              </circle>
+              <circle r="4" class="dg-pulse">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M580 334 H642" keyPoints="0;0;1;1" keyTimes="0;.33;.63;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="2.4s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.33;.37;.6;.64;1"/>
+              </circle>
+            </g>
+          </svg>
+        </div>
+        <figcaption class="mono">Two subsystems: the flight stack and the self-stabilising delivery box, both modelled and validated in simulation.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div class="section-head reveal"><div><span class="sec-tag">03</span><h2>Key specs</h2></div></div>
+      <dl class="spec spec-lg glass reveal">
+        <div><dt>Platform</dt><dd>Hexacopter (6 rotors)</dd></div>
+        <div><dt>Flight controller</dt><dd>Pixhawk running PX4</dd></div>
+        <div><dt>Delivery method</dt><dd>Non-landing: payload lowered in a smart box</dd></div>
+        <div><dt>Payload control</dt><dd>ESP32 + IMU, active fan stabilisation</dd></div>
+        <div><dt>Software</dt><dd>ROS2 pipeline</dd></div>
+        <div><dt>Simulation</dt><dd>Gazebo with PX4 SITL, URDF/xacro airframe model</dd></div>
+        <div><dt>Team</dt><dd>Five members (FYDP)</dd></div>
+        <div><dt>Status</dt><dd><i class="led led-build"></i>Simulation-validated; hardware being assembled</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div class="section-head reveal"><div><span class="sec-tag">04</span><h2>How it was validated</h2></div></div>
+      <div class="case-body reveal">
+        <p>Before building hardware, the team validated the full system in simulation: <b>flight dynamics</b>, <b>delivery-box behaviour</b> and <b>mission logic</b>. It ran in Gazebo with PX4 software-in-the-loop (SITL) over a ROS2 pipeline.</p>
+        <p>The airframe was modelled in <b>URDF/xacro</b> for simulation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div class="section-head reveal"><div><span class="sec-tag">05</span><h2>Design report</h2></div></div>
+      <div class="case-body reveal">
+        <p>Alongside the build, the team wrote a formal FYDP design report covering:</p>
+        <ul class="case-list">
+          <li>System specifications</li>
+          <li>Requirements engineering</li>
+          <li>Design constraints</li>
+          <li>Trade-off tables for conflicting requirements</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div class="section-head reveal"><div><span class="sec-tag">06</span><h2>Status</h2></div></div>
+      <div class="case-body reveal">
+        <p>Payra is validated in simulation. Physical assembly of the hexacopter frame and the ESP32 delivery box is underway.</p>
+        <p class="case-cta"><a class="btn btn-primary" href="index.html#projects">← More projects</a> <a class="btn btn-ghost" href="index.html#contact">Get in touch</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Copyright © 2026 Md. Tasneemul Hassan. All rights reserved.</span>
+    <span>Dhaka, Bangladesh</span>
+  </div>
+</footer>
+
+<script src="plotter.js"></script>
+<script src="case.js"></script>
+</body>
+</html>

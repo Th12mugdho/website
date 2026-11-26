@@ -1,0 +1,5 @@
+# secrets — your API key lives here; never commit it
+.env
+
+# dependencies
+node_modules/
